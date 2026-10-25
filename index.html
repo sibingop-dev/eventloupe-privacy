@@ -1,292 +1,463 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eventloupe — Privacy Policy</title>
-  <meta name="description" content="Eventloupe does not collect, transmit, or store any data outside your browser.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='26' fill='%23e4472b'/%3E%3Cg transform='translate(2 -2)'%3E%3Cpath d='M32 60H97' stroke='%23f4efe6' stroke-width='14'/%3E%3Cpath d='M90 60A30 30 0 1 0 81.2 81.2' fill='none' stroke='%23f4efe6' stroke-width='14'/%3E%3Cpath d='M83 83L104 104' stroke='%23161a22' stroke-width='14' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E">
-  <style>
-    @font-face { font-family: 'Chivo'; font-weight: 800; font-style: normal; font-display: swap;
-      src: url(data:font/woff2;base64,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) format('woff2'); }
-    :root {
-      --bg: #f4efe6; --surface: #fffdf8; --fg: #161a22; --muted: #5d6471; --line: #e3dccd;
-      --accent: #e4472b; --accent-ink: #b8321a; --note-bg: #fbe9e3; --code-bg: #efe8da;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg: #0f1218; --surface: #161a22; --fg: #f4efe6; --muted: #9aa3b5; --line: #262b38;
-        --accent: #ff6a4d; --accent-ink: #ff8a73; --note-bg: #251a19; --code-bg: #1e2430; }
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-      background: var(--bg); color: var(--fg); line-height: 1.7;
-      padding: 0 max(20px, env(safe-area-inset-right)) 64px max(20px, env(safe-area-inset-left));
-    }
-    .wrap { max-width: 720px; margin: 0 auto; }
-    header { padding: 40px 0 8px; }
-    .brand { display: flex; align-items: center; gap: 12px; font: 800 22px/1 'Chivo', system-ui, sans-serif; letter-spacing: -.3px; }
-    .brand svg { flex-shrink: 0; }
-    h1 { font-family: 'Chivo', system-ui, sans-serif; font-size: clamp(30px, 6vw, 42px); line-height: 1.1; font-weight: 800; letter-spacing: -.8px; margin: 36px 0 10px; text-wrap: balance; }
-    .subtitle { font-size: 14px; color: var(--muted); }
-    .promise {
-      display: flex; gap: 14px; align-items: flex-start; margin: 32px 0 8px; padding: 20px 22px;
-      background: var(--note-bg); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 12px;
-      font-size: 16px; font-weight: 600; line-height: 1.55;
-    }
-    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0 8px; }
-    .fact { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
-    .fact b { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; margin-bottom: 4px; }
-    .fact span { font-size: 15px; font-weight: 700; }
-    nav { margin: 32px 0 0; padding: 16px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
-    nav b { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
-    nav ol { margin: 8px 0 0 18px; columns: 2 220px; font-size: 14px; }
-    nav li { margin-bottom: 2px; padding-left: 4px; opacity: 1; }
-    nav li::before { display: none; }
-    section { padding-top: 8px; }
-    h2 { font-family: 'Chivo', system-ui, sans-serif; font-size: 20px; font-weight: 800; letter-spacing: -.2px; margin: 40px 0 12px; scroll-margin-top: 16px; }
-    h2 .n { color: var(--accent); font-variant-numeric: tabular-nums; margin-right: 8px; }
-    p { font-size: 15px; color: var(--fg); opacity: .86; margin-bottom: 12px; }
-    ul { font-size: 15px; padding-left: 4px; margin-bottom: 12px; list-style: none; }
-    li { margin-bottom: 10px; padding-left: 22px; position: relative; opacity: .9; }
-    li::before { content: ""; position: absolute; left: 2px; top: .7em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
-    ul.no li::before { background: transparent; border: 2px solid var(--accent); width: 10px; height: 10px; top: .6em; left: 1px; }
-    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .88em; background: var(--code-bg); padding: 2px 6px; border-radius: 5px; }
-    a { color: var(--accent-ink); text-underline-offset: 3px; }
-    a:hover { color: var(--accent); }
-    strong { font-weight: 700; }
-    footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-
-    .layout { display: block; }
-    .side { display: none; }
-    @media (min-width: 980px) {
-      .wrap { max-width: 980px; }
-      .layout { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 56px; }
-      .side { display: block; position: sticky; top: 28px; align-self: start; padding-top: 32px; }
-      .side b { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
-      .side ol { list-style: none; margin-top: 12px; border-left: 2px solid var(--line); }
-      .side li { margin: 0; padding: 0; opacity: 1; }
-      .side li::before { display: none; }
-      .side a { display: block; padding: 5px 0 5px 14px; margin-left: -2px; border-left: 2px solid transparent; font-size: 14px; color: var(--muted); text-decoration: none; }
-      .side a:hover { color: var(--fg); }
-      .side a[aria-current="true"] { color: var(--accent-ink); border-left-color: var(--accent); font-weight: 600; }
-      nav.inline { display: none; }
-      main { max-width: 700px; }
-    }
-    .table-wrap { overflow-x: auto; margin: 4px 0 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
-    table { width: 100%; border-collapse: collapse; font-size: 15px; text-align: left; }
-    th, td { padding: 14px 16px; vertical-align: top; border-bottom: 1px solid var(--line); }
-    tr:last-child td { border-bottom: 0; }
-    th { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; background: var(--code-bg); }
-    td:first-child { white-space: nowrap; }
-    td:last-child { opacity: .9; }
-    @media (max-width: 560px) { td:first-child { white-space: normal; } th, td { padding: 12px; } }
-
-    body { position: relative; overflow-x: hidden; }
-    .bgbox { position: absolute; top: 0; left: 0; right: 0; height: 520px; overflow: hidden; z-index: 0; pointer-events: none;
-      -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 100%); }
-    .bg { position: absolute; top: 0; left: 50%; width: max(100%, 1200px); height: 520px; transform: translateX(-50%); }
-    .wrap { position: relative; z-index: 1; }
-    @media (max-width: 700px) { .bgbox { opacity: .55; } }
-    @media print { .bgbox { display: none; } }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eventloupe — a magnifier for tracking events</title>
+<meta name="description" content="Eventloupe is a Chrome DevTools extension that shows every pixel, tag and dataLayer push a page fires, what was sent, and what was actually observed.">
+<meta name="theme-color" content="#0d1016">
+<link rel="canonical" href="https://eventloupe.com/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/icon-128.png">
+<link rel="preload" href="fonts/chivo-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Eventloupe">
+<meta property="og:title" content="Eventloupe — a magnifier for tracking events">
+<meta property="og:description" content="See every pixel, tag and dataLayer push a page fires, what was sent, and what was actually observed.">
+<meta property="og:url" content="https://eventloupe.com/">
+<meta property="og:image" content="https://eventloupe.com/img/og.png">
+<meta property="og:image:width" content="440">
+<meta property="og:image:height" content="280">
+<meta name="twitter:card" content="summary_large_image">
+<script>(function(d){d.classList.add("js");try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&!sessionStorage.getItem("el-intro")){d.classList.add("intro");sessionStorage.setItem("el-intro","1")}}catch(e){}})(document.documentElement)</script>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="bgbox" aria-hidden="true"><svg class="bg" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMin slice" aria-hidden="true" focusable="false"><rect x="0" y="0" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="66" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.6"/><rect x="88" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="110" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="132" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="154" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="176" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.45"/><rect x="198" y="0" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="220" y="0" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="286" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.45"/><rect x="308" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.32"/><rect x="330" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="352" y="0" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="440" y="0" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="484" y="0" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="506" y="0" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="528" y="0" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="550" y="0" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="572" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.32"/><rect x="594" y="0" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="726" y="0" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="770" y="0" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="836" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="858" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="880" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.6"/><rect x="902" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="924" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.45"/><rect x="946" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.45"/><rect x="968" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.32"/><rect x="1012" y="0" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1034" y="0" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1078" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.32"/><rect x="1100" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.45"/><rect x="1122" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.45"/><rect x="1144" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="1166" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.6"/><rect x="1188" y="0" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="22" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="110" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="132" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="154" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="176" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="242" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="286" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="330" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="352" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="374" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="396" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="418" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="462" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="484" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="528" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="572" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="594" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="616" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="638" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="660" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="704" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="748" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="770" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="836" y="22" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.45"/><rect x="880" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="902" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="946" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="968" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1056" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1078" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1100" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1122" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1144" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1166" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1188" y="22" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="0" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="22" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="88" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="220" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="242" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="264" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="308" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="330" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="440" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="484" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="506" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="528" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="572" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="682" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="726" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="770" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="902" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="946" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="968" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="990" y="44" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.6"/><rect x="1012" y="44" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.45"/><rect x="1034" y="44" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.6"/><rect x="1056" y="44" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="1078" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1100" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1122" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1188" y="44" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="44" y="66" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.6"/><rect x="88" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="110" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="132" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="154" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="198" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="264" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="352" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="440" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="462" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="506" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="550" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="572" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="616" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="638" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="660" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="682" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="704" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="748" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="814" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="836" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="858" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="880" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="902" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="924" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="968" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1078" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1100" y="66" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="0" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="88" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="132" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="154" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="198" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="242" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="264" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="286" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="308" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="374" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="418" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="462" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="484" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="528" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="594" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="616" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="682" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="704" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="726" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="792" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="814" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="836" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="858" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="880" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="902" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="924" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="990" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1012" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1034" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1078" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1100" y="88" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="0" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="22" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="88" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="176" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="286" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="308" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="330" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="352" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="418" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="484" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="506" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="550" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="660" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="682" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="704" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="792" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="814" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="858" y="110" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.6"/><rect x="880" y="110" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="902" y="110" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.6"/><rect x="924" y="110" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="946" y="110" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="968" y="110" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.6"/><rect x="990" y="110" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.32"/><rect x="1012" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1100" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1122" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1144" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1166" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1188" y="110" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="22" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="66" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="132" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="154" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="198" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="242" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="264" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="286" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="308" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="374" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="418" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="440" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="462" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="484" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="506" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="528" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="550" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="616" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="726" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="770" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="814" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="902" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="946" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1012" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1034" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1056" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1078" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1100" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1144" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1188" y="132" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="22" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="44" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="66" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="88" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="132" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="198" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="220" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="242" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="308" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="352" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="374" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="396" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="418" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="440" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="462" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="484" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="506" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="594" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="616" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="638" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="682" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="704" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="814" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="836" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="858" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="902" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="946" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="968" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1012" y="154" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.45"/><rect x="1034" y="154" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.6"/><rect x="1056" y="154" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.32"/><rect x="1078" y="154" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.32"/><rect x="1100" y="154" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.32"/><rect x="1122" y="154" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="1144" y="154" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.6"/><rect x="1188" y="154" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="0" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="132" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="154" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="176" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="198" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="242" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="286" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="308" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="330" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="352" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="374" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="418" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="440" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="484" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="528" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="550" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="748" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="792" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="836" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="858" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="880" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="902" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="924" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="946" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="968" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1034" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1078" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1100" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1122" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1166" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1188" y="176" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="22" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="132" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="176" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="220" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="242" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="308" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="396" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="484" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="550" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="594" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="616" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="660" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="682" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="726" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="770" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="880" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="946" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="968" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="990" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1012" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1034" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1056" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1078" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1100" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1166" y="198" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="0" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="88" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="110" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="154" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="198" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="308" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="330" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="440" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="462" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="484" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="572" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="594" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="638" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="682" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="704" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="748" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="770" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="792" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="814" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="858" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="924" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1034" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1100" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1122" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1166" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1188" y="220" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="66" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="132" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="198" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="308" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="330" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="352" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="418" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="440" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="462" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="484" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="572" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="660" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="682" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="704" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="726" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="748" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="792" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="814" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="836" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="968" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="990" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1034" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1056" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1078" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1122" y="242" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="0" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="44" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="88" y="264" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.6"/><rect x="132" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="198" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="220" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="308" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="330" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="352" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="462" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="506" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="528" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="572" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="616" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="770" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="792" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="814" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="836" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="880" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="902" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="946" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="968" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="990" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1012" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1056" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1100" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1122" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1144" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1166" y="264" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="0" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="44" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="88" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="154" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="176" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="220" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="264" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="308" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="374" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="396" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="418" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="440" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="506" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="528" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="572" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="594" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="638" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="660" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="704" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="726" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="748" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="770" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="792" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="814" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="836" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="880" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="902" y="286" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.45"/><rect x="924" y="286" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="946" y="286" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.32"/><rect x="968" y="286" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.32"/><rect x="990" y="286" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="1012" y="286" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.6"/><rect x="1078" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1100" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1166" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1188" y="286" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="132" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="154" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="176" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="220" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="264" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="352" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="462" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="616" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="726" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="748" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="770" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="880" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="902" y="308" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.32"/><rect x="924" y="308" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.6"/><rect x="946" y="308" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.45"/><rect x="968" y="308" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.32"/><rect x="990" y="308" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.32"/><rect x="1012" y="308" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.6"/><rect x="1034" y="308" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.6"/><rect x="1056" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1078" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1100" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1122" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1166" y="308" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="0" y="330" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.22"/><rect x="22" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="66" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="110" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="242" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="286" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="308" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="330" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="396" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="418" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="572" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="616" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="660" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="682" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="726" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="748" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="792" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="880" y="330" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.32"/><rect x="924" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="968" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1122" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1144" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1166" y="330" width="14" height="14" rx="3" fill="var(--accent)" opacity="0.45"/><rect x="1188" y="330" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="44" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="88" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="110" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="154" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="176" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="198" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="242" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="264" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="308" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="352" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="396" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="462" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="484" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="506" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="528" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="550" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="616" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="682" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="704" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="748" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="814" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="836" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="858" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="880" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="924" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="946" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="990" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1012" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1034" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1122" y="352" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="0" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="22" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="66" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="88" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="110" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="132" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="154" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="176" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="220" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="286" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="330" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="374" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="440" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="462" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="528" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="550" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="594" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="616" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="638" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="660" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="704" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="770" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="792" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="836" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="924" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="968" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="990" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1078" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1144" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1166" y="374" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="0" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="22" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="198" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="264" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="330" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="352" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="396" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="440" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="462" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="506" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="572" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="594" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="660" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="704" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="726" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="748" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="814" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="836" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="880" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="924" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="990" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1056" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1144" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1166" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1188" y="396" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="22" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="66" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="88" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="132" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="242" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="264" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="286" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="308" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="330" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="352" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="374" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="396" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="418" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="462" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="484" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="506" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="550" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="572" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="594" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="616" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="682" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="748" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="770" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="858" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="902" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="924" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="946" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="968" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="990" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1056" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1144" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1166" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1188" y="418" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="0" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="22" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="44" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="88" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="132" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="154" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="176" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="198" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="242" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="264" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="308" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="330" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="352" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="374" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="418" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="506" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="528" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="550" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="572" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="594" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="660" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="704" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="770" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="814" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="836" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="990" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1034" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1056" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1100" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1166" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1188" y="440" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="66" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="88" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="132" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="154" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="176" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="242" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="418" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="462" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="484" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="506" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="528" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="572" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="638" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="660" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="792" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="814" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="836" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="880" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="902" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="946" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1012" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1034" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1056" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1144" y="462" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="44" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="66" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="88" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="110" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="132" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="198" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="220" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="286" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="330" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="374" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="396" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="418" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="462" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="484" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="528" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="572" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="594" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="616" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="638" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="660" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="682" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="704" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="748" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="814" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="836" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="880" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="902" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1012" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1034" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="1056" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1122" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1166" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1188" y="484" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="22" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="132" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="220" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="352" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="396" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="418" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="550" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="572" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="594" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="660" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="682" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="726" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="748" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="792" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="814" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="858" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="902" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.04"/><rect x="924" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="968" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="990" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1056" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1100" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.055"/><rect x="1166" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><rect x="1188" y="506" width="14" height="14" rx="3" fill="var(--fg)" opacity="0.025"/><g opacity=".11" transform="translate(-30 300)"><circle cx="0" cy="0" r="150" fill="none" stroke="var(--accent)" stroke-width="22"/><line x1="106" y1="106" x2="230" y2="230" stroke="var(--accent)" stroke-width="30" stroke-linecap="round"/></g><g opacity="0.50"><rect x="820" y="70" width="330" height="34" rx="9" fill="var(--surface)" stroke="var(--line)"/><circle cx="842" cy="87" r="5" fill="var(--accent)"/><rect x="858" y="82" width="120" height="4" rx="2" fill="var(--fg)" opacity=".28"/><rect x="858" y="91" width="60" height="3" rx="1.5" fill="var(--muted)" opacity=".5"/><rect x="1096" y="81" width="40" height="12" rx="6" fill="var(--accent)" opacity=".18"/></g><g opacity="0.43"><rect x="820" y="118" width="330" height="34" rx="9" fill="var(--surface)" stroke="var(--line)"/><circle cx="842" cy="135" r="5" fill="#4f8cff"/><rect x="858" y="130" width="140" height="4" rx="2" fill="var(--fg)" opacity=".28"/><rect x="858" y="139" width="70" height="3" rx="1.5" fill="var(--muted)" opacity=".5"/><rect x="1096" y="129" width="40" height="12" rx="6" fill="var(--accent)" opacity=".18"/></g><g opacity="0.36"><rect x="820" y="166" width="330" height="34" rx="9" fill="var(--surface)" stroke="var(--line)"/><circle cx="842" cy="183" r="5" fill="#2dd4bf"/><rect x="858" y="178" width="70" height="4" rx="2" fill="var(--fg)" opacity=".28"/><rect x="858" y="187" width="35" height="3" rx="1.5" fill="var(--muted)" opacity=".5"/><rect x="1096" y="177" width="40" height="12" rx="6" fill="var(--accent)" opacity=".18"/></g><g opacity="0.29"><rect x="820" y="214" width="330" height="34" rx="9" fill="var(--surface)" stroke="var(--line)"/><circle cx="842" cy="231" r="5" fill="#f5b342"/><rect x="858" y="226" width="90" height="4" rx="2" fill="var(--fg)" opacity=".28"/><rect x="858" y="235" width="45" height="3" rx="1.5" fill="var(--muted)" opacity=".5"/><rect x="1096" y="225" width="40" height="12" rx="6" fill="var(--accent)" opacity=".18"/></g><g opacity="0.22"><rect x="820" y="262" width="330" height="34" rx="9" fill="var(--surface)" stroke="var(--line)"/><circle cx="842" cy="279" r="5" fill="#a78bfa"/><rect x="858" y="274" width="90" height="4" rx="2" fill="var(--fg)" opacity=".28"/><rect x="858" y="283" width="45" height="3" rx="1.5" fill="var(--muted)" opacity=".5"/><rect x="1096" y="273" width="40" height="12" rx="6" fill="var(--accent)" opacity=".18"/></g></svg></div>
-<div class="wrap">
+<a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="lm" viewBox="0 0 128 128"><rect width="128" height="128" rx="26" fill="#e4472b"/><g transform="translate(2 -2)"><path d="M32 60H97" stroke="#f4efe6" stroke-width="14"/><path d="M90 60A30 30 0 1 0 81.2 81.2" fill="none" stroke="#f4efe6" stroke-width="14"/><path d="M83 83L104 104" stroke="#161a22" stroke-width="14" stroke-linecap="round"/></g></symbol></svg>
 
-  <header>
-    <div class="brand">
-      <svg width="34" height="34" viewBox="0 0 128 128" role="img" aria-label="Eventloupe logo"><rect width="128" height="128" rx="26" fill="#e4472b"/><g transform="translate(2 -2)"><path d="M32 60H97" stroke="#f4efe6" stroke-width="14"/><path d="M90 60A30 30 0 1 0 81.2 81.2" fill="none" stroke="#f4efe6" stroke-width="14"/><path d="M83 83L104 104" stroke="#161a22" stroke-width="14" stroke-linecap="round"/></g></svg>
-      Eventloupe
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Eventloupe home"><span class="mark" aria-hidden="true"><svg width="44" height="44"><use href="#lm"/></svg></span><span class="word">Eventloupe</span><span class="navtag">A magnifier for tracking events</span></a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#panel">The panel</a></li>
+        <li class="keep"><a href="docs.html">Docs</a></li>
+        <li><a href="#platforms">Platforms</a></li>
+        <li class="keep"><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+<!-- ───────── HERO ───────── -->
+<section class="hero" aria-labelledby="h1">
+  <canvas id="field" class="field" aria-hidden="true"></canvas>
+  <svg class="ghost" aria-hidden="true" focusable="false"><use href="#lm"/></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-id">
+        <div class="hero-mark" aria-hidden="true">
+          <svg viewBox="0 0 128 128" width="84" height="84" focusable="false">
+            <rect class="tile" width="128" height="128" rx="26" fill="#e4472b"/>
+            <g transform="translate(2 -2)">
+              <path class="bar" pathLength="1" d="M32 60H97" stroke="#f4efe6" stroke-width="14" fill="none"/>
+              <path class="bowl" pathLength="1" d="M90 60A30 30 0 1 0 81.2 81.2" fill="none" stroke="#f4efe6" stroke-width="14"/>
+              <path class="handle" d="M83 83L104 104" stroke="#161a22" stroke-width="14" stroke-linecap="round" fill="none"/>
+            </g>
+          </svg>
+          <i class="ring"></i>
+        </div>
+        <p class="kicker tagline">A magnifier for tracking events.</p>
+      </div>
+      <h1 id="h1">See what your page <em>really</em> sends.</h1>
+      <p class="lede">Eventloupe is a Chrome DevTools extension. It shows every pixel, tag and dataLayer push a page fires, what was sent, and what was actually observed.</p>
+      <!-- Waitlist is HIDDEN until it is wired. To go live: set data-endpoint on the form to the provider URL, remove its `hidden`
+           attribute, delete the #wl-soon block below, and apply store/waitlist-privacy-addendum.md to the privacy page. -->
+      <div class="wl-soon" id="wl-soon">
+        <p class="wl-note"><i aria-hidden="true"></i>Chrome extension, launching soon on the Chrome Web Store.</p>
+        <a class="pill primary" href="https://github.com/sibingop-dev/eventloupe-privacy/issues" rel="noopener">Share feedback on GitHub</a>
+      </div>
+      <form class="waitlist" id="waitlist" novalidate data-endpoint="" aria-label="Join the waitlist" hidden>
+        <div class="wl-row">
+          <label class="sr-only" for="wl-email">Email address</label>
+          <input id="wl-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@company.com" required aria-describedby="wl-note">
+          <input class="hp" name="website" type="text" tabindex="-1" autocomplete="off" inert>
+          <button class="pill primary" type="submit">Join the waitlist</button>
+        </div>
+        <p class="wl-note" id="wl-note" role="status" aria-live="polite"><i aria-hidden="true"></i>Chrome extension, launching soon on the Chrome Web Store. We'll email you once, when it's live.</p>
+      </form>
+      <p class="hero-links"><a href="#how">See how it works <span aria-hidden="true">↓</span></a><a href="privacy.html">Privacy policy</a></p>
     </div>
-    <h1>Privacy Policy</h1>
-    <p class="subtitle">Last updated: October 2026</p>
-  </header>
 
-  <div class="layout">
-  <aside class="side" aria-label="Contents">
-    <b>Contents</b>
-    <ol>
-      <li><a href="#what">What Eventloupe does</a></li>
-      <li><a href="#not-collected">Data we do NOT collect</a></li>
-      <li><a href="#reads">What the extension reads on a page</a></li>
-      <li><a href="#storage">How captured data is stored</a></li>
-      <li><a href="#permissions">Permissions explained</a></li>
-      <li><a href="#third-party">Third-party services</a></li>
-      <li><a href="#children">Children's privacy</a></li>
-      <li><a href="#changes">Changes to this policy</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ol>
-  </aside>
-  <main>
-  <div class="promise">
-    Eventloupe does not collect, transmit, or store any data outside your browser.
-    Everything stays on your device.
+    <div class="stage-wrap">
+      <div class="stage" id="stage" role="group" aria-label="Interactive demo: move the magnifier over a sample product page to reveal the tracking events behind it">
+        <div class="canvas" id="canvas">
+          <div class="layer base" aria-hidden="true">
+            <div class="page" id="page">
+              <div class="bar"><b></b><b></b><b></b><span>shop.example/linen-overshirt</span></div>
+              <div class="photo hl">product photo</div>
+              <div class="title">Linen overshirt</div>
+              <div class="price">$89.00</div>
+              <div class="sizes"><i>S</i><i>M</i><i>L</i><i>XL</i></div>
+              <div class="atc hl">Add to cart</div>
+              <div class="ship">Free returns · ships in 2 days</div>
+              <div class="cookie hl">
+                <p>We use cookies to measure and advertise.</p>
+                <div class="b1">Reject all</div><div class="b2">Accept all</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="layer reveal" id="reveal" aria-hidden="true">
+            <!-- JS clones #page here so the lens shows the same page, lit and annotated -->
+            <div class="chip ok"  style="left:34px;top:70px"><b>GTM</b> container loaded <span class="g">✓ 200</span></div>
+            <div class="chip ok"  style="left:34px;top:98px"><b>GA4</b> view_item <span class="g">✓ 204</span></div>
+            <div class="chip ok"  style="left:34px;top:126px"><b>dataLayer</b> view_item <span class="g">✓ seen</span></div>
+            <div class="chip ok"  style="left:34px;top:154px"><b>Meta Pixel</b> ViewContent <span class="g">✓ 200</span></div>
+            <div class="chip ok"  style="left:258px;top:246px"><b>GA4</b> add_to_cart <span class="g">✓ 204</span></div>
+            <div class="chip ok"  style="left:258px;top:272px"><b>Meta Pixel</b> AddToCart <span class="g">✓ 200</span></div>
+            <div class="chip unk" style="left:258px;top:298px"><b>TikTok</b> AddToCart <span class="g">? unknown</span></div>
+            <div class="chip ok"  style="left:34px;top:350px"><b>Consent</b> ad_storage <span class="g">✓ denied</span></div>
+            <div class="chip bad" style="left:34px;top:376px"><b>Google Ads</b> conversion <span class="g">✗ 500</span></div>
+          </div>
+
+          <div class="lens" id="lens"></div>
+        </div>
+      </div>
+
+      <div class="hud">
+        <div class="counts" aria-hidden="true">
+          <span class="c"><i></i><span id="c-ok">0</span> observed</span>
+          <span class="c bad"><i></i><span id="c-bad">0</span> failed</span>
+          <span class="c unk"><i></i><span id="c-unk">0</span> unknown</span>
+        </div>
+        <div class="btns"><button type="button" id="pause" aria-pressed="false">Pause motion</button><button type="button" id="reveal-all" aria-pressed="false">Show every event</button></div>
+      </div>
+      <p class="fine">Illustrative example of one add-to-cart click on a sample page. Move the loupe, or tap and drag it.</p>
+
+      <ul class="sr-only">
+        <li>Example of what Eventloupe reports on a sample product page.</li>
+        <li>Page view: Google Tag Manager container loaded, status 200. GA4 view_item observed, status 204. dataLayer view_item push seen. Meta Pixel ViewContent observed, status 200.</li>
+        <li>Add to cart click: GA4 add_to_cart observed, status 204. Meta Pixel AddToCart observed, status 200. TikTok AddToCart unknown, no response could be observed.</li>
+        <li>Consent banner: Consent Mode ad_storage observed as denied. Google Ads conversion failed, status 500.</li>
+      </ul>
+    </div>
   </div>
+</section>
 
-  <div class="facts">
-    <div class="fact"><b>Accounts</b><span>None needed</span></div>
-    <div class="fact"><b>Servers</b><span>None used</span></div>
-    <div class="fact"><b>Analytics</b><span>None inside</span></div>
-    <div class="fact"><b>Data lives</b><span>In your browser</span></div>
+<div class="rail" aria-hidden="true"><div class="track"><div class="grp"><span class="chip ok"><b>GA4</b> page_view <span class="g">✓ 204</span></span><span class="chip ok"><b>Meta Pixel</b> PageView <span class="g">✓ 200</span></span><span class="chip unk"><b>TikTok</b> ViewContent <span class="g">? unknown</span></span><span class="chip ok"><b>GTM</b> gtm.js <span class="g">✓ 200</span></span><span class="chip bad"><b>Google Ads</b> conversion <span class="g">✗ 500</span></span><span class="chip ok"><b>dataLayer</b> purchase <span class="g">✓ seen</span></span><span class="chip ok"><b>Pinterest</b> pagevisit <span class="g">✓ 200</span></span><span class="chip unk"><b>LinkedIn</b> insight <span class="g">? unknown</span></span><span class="chip ok"><b>Segment</b> track <span class="g">✓ 200</span></span><span class="chip ok"><b>Consent</b> ad_storage <span class="g">✓ denied</span></span><span class="chip bad"><b>Meta Pixel</b> Purchase <span class="g">✗ 400</span></span><span class="chip ok"><b>GA4</b> add_to_cart <span class="g">✓ 204</span></span></div><div class="grp"><span class="chip ok"><b>GA4</b> page_view <span class="g">✓ 204</span></span><span class="chip ok"><b>Meta Pixel</b> PageView <span class="g">✓ 200</span></span><span class="chip unk"><b>TikTok</b> ViewContent <span class="g">? unknown</span></span><span class="chip ok"><b>GTM</b> gtm.js <span class="g">✓ 200</span></span><span class="chip bad"><b>Google Ads</b> conversion <span class="g">✗ 500</span></span><span class="chip ok"><b>dataLayer</b> purchase <span class="g">✓ seen</span></span><span class="chip ok"><b>Pinterest</b> pagevisit <span class="g">✓ 200</span></span><span class="chip unk"><b>LinkedIn</b> insight <span class="g">? unknown</span></span><span class="chip ok"><b>Segment</b> track <span class="g">✓ 200</span></span><span class="chip ok"><b>Consent</b> ad_storage <span class="g">✓ denied</span></span><span class="chip bad"><b>Meta Pixel</b> Purchase <span class="g">✗ 400</span></span><span class="chip ok"><b>GA4</b> add_to_cart <span class="g">✓ 204</span></span></div></div></div>
+
+<!-- ───────── THREE QUESTIONS ───────── -->
+<section class="paper" id="how" aria-labelledby="h-how">
+  <div class="wrap">
+    <div class="trace" aria-hidden="true"><i class="ok"></i></div>
+    <p class="eyebrow">How it works</p>
+    <h2 id="h-how">Three questions, answered for every event.</h2>
+    <p class="sub">Most tag debuggers tell you a request was made. Eventloupe tells you what happened to it, and why it says so.</p>
+    <div class="three">
+      <article class="card">
+        <span class="n">01</span>
+        <h3>What happened?</h3>
+        <p>Every event is captured the moment it fires, from <code>dataLayer.push</code>, SDK calls like <code>gtag()</code> and <code>fbq()</code>, and the network itself. Two capture channels run in parallel, so early pixels aren't missed.</p>
+      </article>
+      <article class="card">
+        <span class="n">02</span>
+        <h3>How do we know?</h3>
+        <p>Each event is traced through six stages, from your app to the response. Every stage is marked observed, failed, or unknown, so you can see exactly where the evidence stops.</p>
+      </article>
+      <article class="card">
+        <span class="n">03</span>
+        <h3>What should be fixed?</h3>
+        <p>Rule-based diagnostics with stable codes, <code>EL1000</code> to <code>EL9999</code>. The same input always gives the same answer. No AI decides what's valid.</p>
+      </article>
+    </div>
   </div>
+</section>
 
-  <nav class="inline" aria-label="Contents">
-    <b>Contents</b>
-    <ol>
-      <li><a href="#what">What Eventloupe does</a></li>
-      <li><a href="#not-collected">Data we do NOT collect</a></li>
-      <li><a href="#reads">What the extension reads on a page</a></li>
-      <li><a href="#storage">How captured data is stored</a></li>
-      <li><a href="#permissions">Permissions explained</a></li>
-      <li><a href="#third-party">Third-party services</a></li>
-      <li><a href="#children">Children's privacy</a></li>
-      <li><a href="#changes">Changes to this policy</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ol>
-  </nav>
+<!-- ───────── EVIDENCE / TRUTH GAP ───────── -->
+<section id="evidence" aria-labelledby="h-states">
+  <div class="wrap">
+    <div class="trace" aria-hidden="true"><i class="bad"></i></div>
+    <p class="eyebrow">The truth gap</p>
+    <h2 id="h-states">Evidence, not guesses.</h2>
+    <p class="sub"><strong class="lead">Fired is not the same as delivered.</strong> A missing response isn't a success, and it isn't a failure. Eventloupe keeps "I couldn't observe this" as its own answer instead of rounding it to yes or no.</p>
 
-  <section id="what">
-  <h2><span class="n">1</span>What Eventloupe does</h2>
-  <p>
-    Eventloupe is a Chrome DevTools extension that helps developers and marketers
-    inspect the analytics and tracking events fired on any website they are actively
-    debugging. It captures and displays tracking requests (Google Analytics, Meta Pixel,
-    TikTok, etc.) that are already visible in the Chrome DevTools Network tab.
-  </p>
-  </section>
+    <div class="states">
+      <div class="state ok">
+        <div class="big"><span aria-hidden="true">✓</span> Observed</div>
+        <p class="mono" style="margin-top:14px">httpStatus: 204</p>
+        <p>The request was seen and the response came back clean.</p>
+      </div>
+      <div class="state bad">
+        <div class="big"><span aria-hidden="true">✗</span> Failed</div>
+        <p class="mono" style="margin-top:14px">httpStatus: 500</p>
+        <p>The request was seen and delivery was confirmed to have failed.</p>
+      </div>
+      <div class="state unk">
+        <div class="big"><span aria-hidden="true">?</span> Unknown</div>
+        <p class="mono" style="margin-top:14px">httpStatus: null</p>
+        <p>Not observable from the browser. Shown as unknown, never as an error you didn't see.</p>
+      </div>
+    </div>
 
-  <section id="not-collected">
-  <h2><span class="n">2</span>Data we do NOT collect</h2>
-  <ul class="no">
-    <li>We do not collect any personal information about you</li>
-    <li>We do not transmit any data to our servers or any third-party servers</li>
-    <li>We do not use analytics, telemetry, or crash reporting</li>
-    <li>We do not require an account or login</li>
-    <li>We do not track which websites you visit</li>
-  </ul>
-  </section>
+    <div class="blk">
+      <h3 class="blk-h">Standard debuggers vs. Eventloupe</h3>
+      <div class="tbl-wrap" role="region" aria-label="Comparison table (scrolls sideways on small screens)" tabindex="0">
+        <table class="matrix">
+          <caption class="sr-only">A typical pass/fail debugger compared with Eventloupe</caption>
+          <thead><tr><th scope="col"><span class="sr-only">Capability</span></th><th scope="col">Standard debuggers</th><th scope="col" class="ev">Eventloupe</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Status model</th><td>Success or fail. Two states.</td><td>Observed, failed or unknown. Three states.</td></tr>
+            <tr><th scope="row">What it relies on</th><td>Typically the SDK's own report of what it did</td><td>The network request and its response, alongside the SDK call</td></tr>
+            <tr><th scope="row">Missing evidence</th><td>Has to be shown as a pass or a fail</td><td>Shown as unknown, never guessed</td></tr>
+            <tr><th scope="row">Delivery</th><td>Not verified</td><td>Response status recorded where the browser exposes it</td></tr>
+            <tr><th scope="row">The report</th><td>A pass/fail badge</td><td>An evidence trail: six stages, each marked observed, failed or unknown</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="legal">"Standard debuggers" describes the common pass/fail approach, not any specific product.</p>
+    </div>
 
-  <section id="reads">
-  <h2><span class="n">3</span>What the extension reads on a page</h2>
-  <p>To show you tracking events, Eventloupe runs a small script on web pages that observes calls to known analytics APIs (such as <code>dataLayer.push</code>, <code>gtag</code>, <code>fbq</code>) and requests to known tracking endpoints, including the request body where the event details are sent. Those events may contain identifiers that the site itself sends to its analytics vendors. Eventloupe does not send them anywhere: they are shown in the DevTools panel, kept temporarily in your browser as described below, and included in an export or report only when you create one yourself.</p>
-  </section>
+    <div class="blk ba" id="ba">
+      <h3 class="blk-h">Same event, two answers</h3>
+      <div class="ba-grid">
+        <div class="ba-card old">
+          <p class="ba-lab">Standard debugger</p>
+          <div class="ba-res ok"><span aria-hidden="true">✓</span><div><b>purchase</b><small>Success</small></div></div>
+          <p class="ba-cap">The SDK call fired, so a pass/fail badge says it worked.</p>
+        </div>
+        <div class="ba-card new">
+          <p class="ba-lab">Eventloupe</p>
+          <ol class="ba-st" role="list" aria-label="Pipeline stages for the purchase event">
+            <li class="s ok" style="--i:0"><i aria-hidden="true">✓</i>Application</li>
+            <li class="s ok" style="--i:1"><i aria-hidden="true">✓</i>Tag Manager</li>
+            <li class="s ok" style="--i:2"><i aria-hidden="true">✓</i>SDK</li>
+            <li class="s ok" style="--i:3"><i aria-hidden="true">✓</i>Network</li>
+            <li class="s bad" style="--i:4"><i aria-hidden="true">✗</i>Response</li>
+          </ol>
+          <div class="ba-res bad"><span aria-hidden="true">✗</span><div><b>Failed at Response</b><small>HTTP 500 · EL1003</small></div></div>
+          <p class="ba-cap">The request left the browser. The server's response says it wasn't recorded.</p>
+        </div>
+      </div>
+      <p class="legal">Illustrative example.</p>
+    </div>
 
-  <section id="storage">
-  <h2><span class="n">4</span>How captured data is stored</h2>
-  <p>
-    Tracking events captured while you use Eventloupe are stored exclusively in your
-    browser using Chrome's built-in storage APIs:
-  </p>
-  <ul>
-    <li>
-      <strong>chrome.storage.session</strong> — temporary in-memory storage that is
-      automatically cleared when you close the browser or the browser session ends.
-      Used to restore the event feed if Chrome's service worker restarts.
-    </li>
-    <li>
-      <strong>chrome.storage.local</strong> — used only to persist your personal
-      alert rule configurations (if you create any). This data never leaves your device.
-    </li>
-  </ul>
-  <p>
-    No captured tracking data is ever written to disk beyond Chrome's own storage
-    mechanisms, and none of it is ever sent outside your browser.
-  </p>
-  </section>
-
-  <section id="permissions">
-  <h2><span class="n">5</span>Permissions explained</h2>
-  <p>Eventloupe requests the following Chrome permissions:</p>
-  <div class="table-wrap">
-  <table>
-    <thead><tr><th scope="col">Permission</th><th scope="col">Why it is needed</th></tr></thead>
-    <tbody>
-      <tr>
-        <td><code>&lt;all_urls&gt;</code></td>
-        <td>Required to inject the tracking interceptor into any website you open for inspection. Without this, the extension cannot observe tracking events on the page you are debugging.</td>
-      </tr>
-      <tr>
-        <td><code>webRequest</code></td>
-        <td>Used to observe (not block or modify) network requests made by tracking pixels that fire before the DevTools panel is opened, such as early-loading beacons and server-side pixels.</td>
-      </tr>
-      <tr>
-        <td><code>scripting</code></td>
-        <td>Required to inject a small JavaScript hook into the inspected page's main context to intercept dataLayer pushes, gtag() calls, fbq() calls, and other JS API-level tracking events.</td>
-      </tr>
-      <tr>
-        <td><code>tabs</code></td>
-        <td>Used to read the current tab's URL so events can be correctly grouped by page in the Eventloupe panel and audit reports.</td>
-      </tr>
-      <tr>
-        <td><code>storage</code></td>
-        <td>Used to save your alert rule preferences locally in your browser (see above).</td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="blk">
+      <h3 class="blk-h">The life of one event</h3>
+      <p class="sub" style="margin-top:8px">Six stages, each marked observed, failed or unknown. Select a stage to see what Eventloupe looks at there.</p>
+      <ol class="pipe" role="list" aria-label="Example pipeline for one event, from application to correlation">
+        <li style="--i:0"><button type="button" class="stg" data-i="0" aria-current="true" aria-controls="life-detail"><span class="dot" aria-hidden="true">✓</span><span class="t">Application</span><span class="d">dataLayer push seen</span></button></li>
+        <li style="--i:1"><button type="button" class="stg" data-i="1" aria-current="false" aria-controls="life-detail"><span class="dot" aria-hidden="true">✓</span><span class="t">Tag Manager</span><span class="d">container loaded</span></button></li>
+        <li style="--i:2"><button type="button" class="stg" data-i="2" aria-current="false" aria-controls="life-detail"><span class="dot" aria-hidden="true">✓</span><span class="t">SDK invocation</span><span class="d">gtag() called</span></button></li>
+        <li style="--i:3"><button type="button" class="stg" data-i="3" aria-current="false" aria-controls="life-detail"><span class="dot" aria-hidden="true">✓</span><span class="t">Network</span><span class="d">request sent</span></button></li>
+        <li style="--i:4" class="bad"><button type="button" class="stg" data-i="4" aria-current="false" aria-controls="life-detail"><span class="dot" aria-hidden="true">✗</span><span class="t">Response</span><span class="d">500 · failed</span></button></li>
+        <li style="--i:5" class="unk"><button type="button" class="stg" data-i="5" aria-current="false" aria-controls="life-detail"><span class="dot" aria-hidden="true">?</span><span class="t">Correlation</span><span class="d">unknown</span></button></li>
+      </ol>
+      <p class="sr-only" role="status" id="life-say"></p>
+      <div class="life-detail" id="life-detail">
+        <p class="ld-k">Stage 1 of 6 · Application</p>
+        <dl>
+          <dt>What it looks at</dt><dd>The page's own call: a <code>dataLayer.push</code>, or an SDK call like <code>gtag()</code> or <code>fbq()</code>.</dd>
+          <dt>Evidence recorded</dt><dd>The event name and payload exactly as the page produced them.</dd>
+          <dt>Unknown when</dt><dd>The call ran before Eventloupe could hook it. The network stage may still catch the request.</dd>
+        </dl>
+      </div>
+      <p class="legal">Illustrative pipeline for a single event. Failed stages are flagged where the evidence is, and unknown stages stay unknown.</p>
+    </div>
   </div>
-  </section>
+</section>
 
-  <section id="third-party">
-  <h2><span class="n">6</span>Third-party services</h2>
-  <p>
-    Eventloupe does not integrate with or communicate with any third-party service.
-    The extension operates entirely offline once installed.
-  </p>
-  </section>
-
-  <section id="children">
-  <h2><span class="n">7</span>Children's privacy</h2>
-  <p>
-    Eventloupe is a developer tool intended for adults. We do not knowingly collect
-    any information from children.
-  </p>
-  </section>
-
-  <section id="changes">
-  <h2><span class="n">8</span>Changes to this policy</h2>
-  <p>
-    If we make material changes to this privacy policy, we will update the
-    "Last updated" date above. Continued use of the extension constitutes
-    acceptance of any updated policy.
-  </p>
-  </section>
-
-  <section id="contact">
-  <h2><span class="n">9</span>Contact</h2>
-  <p>
-    Questions about this privacy policy can be raised by opening an issue at
-    <a href="https://github.com/sibingop-dev/eventloupe-privacy/issues" target="_blank" rel="noopener">
-      github.com/sibingop-dev/eventloupe-privacy/issues
-    </a>
-  </p>
-  </section>
-  </main>
+<!-- ───────── PERSONAS ───────── -->
+<section class="paper" id="who" aria-labelledby="h-who">
+  <div class="wrap">
+    <div class="trace" aria-hidden="true"><i class="ok"></i></div>
+    <p class="eyebrow">Who it's for</p>
+    <h2 id="h-who">Built for the precision-obsessed.</h2>
+    <div class="personas">
+      <article class="persona">
+        <p class="role">01 · Developers</p>
+        <h3>Verify dataLayer pushes and SDK invocations without guessing.</h3>
+        <p class="ptag">dataLayer.push → gtag() → request</p>
+      </article>
+      <article class="persona">
+        <p class="role">02 · Analysts</p>
+        <h3>Cross-reference GA4 and Meta Pixel events in one unified timeline.</h3>
+        <p class="ptag">GA4 + Meta Pixel · one timeline</p>
+      </article>
+      <article class="persona">
+        <p class="role">03 · Marketers</p>
+        <h3>Confirm conversion requests were sent and got a response, not just fired.</h3>
+        <p class="ptag">request sent · response observed</p>
+      </article>
+    </div>
   </div>
+</section>
 
-  <footer>
-    <span>Eventloupe is a Chrome DevTools extension.</span>
-    <span>&copy; 2026 Eventloupe. All rights reserved.</span>
-  </footer>
+<!-- ───────── DIAGNOSTIC GALLERY ───────── -->
+<section id="codes" aria-labelledby="h-codes">
+  <div class="wrap">
+    <div class="trace" aria-hidden="true"><i class="unk"></i></div>
+    <p class="eyebrow">Diagnostics</p>
+    <h2 id="h-codes">Every finding has a code.</h2>
+    <p class="sub">Codes are permanent identifiers: the wording can improve, the code never changes. They come from fixed rules, so the same input always gives the same result.</p>
+    <div class="codes">
+      <article class="code-card">
+        <div class="cc-top"><span class="cc-code">EL1001</span><span class="sev medium">Medium</span></div>
+        <h3>Network request not observed</h3>
+        <p class="cc-what">The JS API call was intercepted, but no matching network request was seen.</p>
+        <p class="cc-fix"><b>Fix</b>Check whether a consent manager or ad blocker is suppressing the request.</p>
+      </article>
+      <article class="code-card">
+        <div class="cc-top"><span class="cc-code">EL1002</span><span class="sev critical">Critical</span></div>
+        <h3>HTTP 4xx client error</h3>
+        <p class="cc-what">The tracking server rejected the request, so the event was lost.</p>
+        <p class="cc-fix"><b>Fix</b>Check the payload for malformed parameters or an invalid pixel ID.</p>
+      </article>
+      <article class="code-card">
+        <div class="cc-top"><span class="cc-code">EL1003</span><span class="sev critical">Critical</span></div>
+        <h3>HTTP 5xx server error</h3>
+        <p class="cc-what">The tracking server returned an error, so the platform failed to record the event.</p>
+        <p class="cc-fix"><b>Fix</b>This is platform-side. Retry, or check the platform's status.</p>
+      </article>
+      <article class="code-card">
+        <div class="cc-top"><span class="cc-code">EL2003</span><span class="sev high">High</span></div>
+        <h3>Event ID mismatch</h3>
+        <p class="cc-what">The event_id in the JS call doesn't match the one in the network request.</p>
+        <p class="cc-fix"><b>Fix</b>Pass the same event_id to fbq() and to the CAPI server call.</p>
+      </article>
+      <article class="code-card">
+        <div class="cc-top"><span class="cc-code">EL4002</span><span class="sev medium">Medium</span></div>
+        <h3>ad_storage denied on a conversion</h3>
+        <p class="cc-what">The conversion may not be attributed to the right ad click.</p>
+        <p class="cc-fix"><b>Fix</b>Make sure Consent Mode is configured correctly for your consent platform.</p>
+      </article>
+      <article class="code-card">
+        <div class="cc-top"><span class="cc-code">EL4012</span><span class="sev critical">Critical</span></div>
+        <h3>Consent default set after config</h3>
+        <p class="cc-what">gtag("consent","default") fired after gtag("config"), so tags may have fired with the wrong consent state.</p>
+        <p class="cc-fix"><b>Fix</b>Move the consent default before any config call, ahead of your tag manager.</p>
+      </article>
+    </div>
+    <p class="legal">Eventloupe reports what it observed. A request it doesn't see is "not observed", and the fixes suggest likely causes without claiming one. <a href="docs.html#codes">See how codes are grouped in the docs →</a></p>
+  </div>
+</section>
 
-</div>
-<script>
-  // Highlights the contents link for the section being read. No libraries, no network.
-  (function () {
-    var links = document.querySelectorAll('.side a');
-    var sections = document.querySelectorAll('main section');
-    if (!('IntersectionObserver' in window) || !links.length) return;
-    function mark(id) {
-      links.forEach(function (a) { a.setAttribute('aria-current', a.getAttribute('href') === '#' + id ? 'true' : 'false'); });
-    }
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) mark(e.target.id); });
-    }, { rootMargin: '-15% 0px -70% 0px' });
-    sections.forEach(function (sec) { obs.observe(sec); });
-    mark('what');
-  })();
-</script>
+<!-- ───────── PANEL ───────── -->
+<section class="paper" id="panel" aria-labelledby="h-panel">
+  <div class="wrap">
+    <div class="trace" aria-hidden="true"><i class="ok"></i></div>
+    <p class="eyebrow">The panel</p>
+    <h2 id="h-panel">One panel inside DevTools.</h2>
+    <p class="sub">Captured from real sites, not mock-ups. Add to cart, checkout and consent, across every platform at once.</p>
+
+    <figure class="vis" id="vac">
+      <div class="svgwrap" role="region" tabindex="0" aria-label="Diagram of five tools feeding one timeline (scrolls sideways on small screens)"><svg class="anim" viewBox="0 0 800 290" role="img" aria-label="Five separate debugging tools feed into one ordered timeline" focusable="false"><defs><marker id="vArr" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L8 4L0 8z" class="v-arrow"/></marker></defs><text x="8" y="14" class="v-cap">FIVE TOOLS</text><text x="560" y="14" class="v-cap">ONE TIMELINE</text><g><rect x="8" y="24" width="170" height="36" rx="8" class="v-box"/><text x="22" y="47" class="v-t">GA4 debugger</text></g><g><rect x="8" y="74" width="170" height="36" rx="8" class="v-box"/><text x="22" y="97" class="v-t">Pixel helper</text></g><g><rect x="8" y="124" width="170" height="36" rx="8" class="v-box"/><text x="22" y="147" class="v-t">dataLayer checker</text></g><g><rect x="8" y="174" width="170" height="36" rx="8" class="v-box"/><text x="22" y="197" class="v-t">Tag explorer</text></g><g><rect x="8" y="224" width="170" height="36" rx="8" class="v-box"/><text x="22" y="247" class="v-t">Network tab</text></g><path d="M178 42 C 270 42, 290 142, 334 142" class="v-wire"/><path d="M426 142 C 470 142, 500 42, 560 42" class="v-wire"/><path d="M178 92 C 270 92, 290 142, 334 142" class="v-wire"/><path d="M426 142 C 470 142, 500 92, 560 92" class="v-wire"/><path d="M178 142 C 270 142, 290 142, 334 142" class="v-wire"/><path d="M426 142 C 470 142, 500 142, 560 142" class="v-wire"/><path d="M178 192 C 270 192, 290 142, 334 142" class="v-wire"/><path d="M426 142 C 470 142, 500 192, 560 192" class="v-wire"/><path d="M178 242 C 270 242, 290 142, 334 142" class="v-wire"/><path d="M426 142 C 470 142, 500 242, 560 242" class="v-wire"/><circle cx="380" cy="142" r="46" class="v-core"/><circle cx="380" cy="142" r="46" class="v-core-ring"/><use href="#lm" x="348" y="110" width="64" height="64" class="v-logo"/><text x="380" y="214" text-anchor="middle" class="v-cap">EVENTLOUPE</text><g><rect x="560" y="24" width="232" height="36" rx="8" class="v-row ok"/><text x="574" y="47" class="v-t"><tspan class="v-b">GA4</tspan> page_view <tspan class="v-s ok">✓ 204</tspan></text><rect x="560" y="24" width="232" height="36" rx="8" class="v-flash" opacity="0"><animate attributeName="opacity" dur="5s" begin="0.0s" repeatCount="indefinite" values="0;0;0.9;0;0" keyTimes="0;0.6;0.63;0.85;1"/></rect></g><g><rect x="560" y="74" width="232" height="36" rx="8" class="v-row ok"/><text x="574" y="97" class="v-t"><tspan class="v-b">Meta</tspan> PageView <tspan class="v-s ok">✓ 200</tspan></text><rect x="560" y="74" width="232" height="36" rx="8" class="v-flash" opacity="0"><animate attributeName="opacity" dur="5s" begin="0.45s" repeatCount="indefinite" values="0;0;0.9;0;0" keyTimes="0;0.6;0.63;0.85;1"/></rect></g><g><rect x="560" y="124" width="232" height="36" rx="8" class="v-row ok"/><text x="574" y="147" class="v-t"><tspan class="v-b">dataLayer</tspan> view_item <tspan class="v-s ok">✓ seen</tspan></text><rect x="560" y="124" width="232" height="36" rx="8" class="v-flash" opacity="0"><animate attributeName="opacity" dur="5s" begin="0.9s" repeatCount="indefinite" values="0;0;0.9;0;0" keyTimes="0;0.6;0.63;0.85;1"/></rect></g><g><rect x="560" y="174" width="232" height="36" rx="8" class="v-row unk"/><text x="574" y="197" class="v-t"><tspan class="v-b">TikTok</tspan> ViewContent <tspan class="v-s unk">? unknown</tspan></text><rect x="560" y="174" width="232" height="36" rx="8" class="v-flash" opacity="0"><animate attributeName="opacity" dur="5s" begin="1.35s" repeatCount="indefinite" values="0;0;0.9;0;0" keyTimes="0;0.6;0.63;0.85;1"/></rect></g><g><rect x="560" y="224" width="232" height="36" rx="8" class="v-row bad"/><text x="574" y="247" class="v-t"><tspan class="v-b">Ads</tspan> conversion <tspan class="v-s bad">✗ 500</tspan></text><rect x="560" y="224" width="232" height="36" rx="8" class="v-flash" opacity="0"><animate attributeName="opacity" dur="5s" begin="1.8s" repeatCount="indefinite" values="0;0;0.9;0;0" keyTimes="0;0.6;0.63;0.85;1"/></rect></g><circle r="4.5" class="v-pk" opacity="0"><animateMotion dur="5s" begin="0.0s" repeatCount="indefinite" path="M178 42 C 270 42, 290 142, 334 142" keyPoints="0;1;1" keyTimes="0;0.3;1" calcMode="linear"/><animate attributeName="opacity" dur="5s" begin="0.0s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;0.04;0.27;0.3;1"/></circle><circle r="4.5" class="v-pk" opacity="0"><animateMotion dur="5s" begin="0.0s" repeatCount="indefinite" path="M426 142 C 470 142, 500 42, 560 42" keyPoints="0;0;1;1" keyTimes="0;0.3;0.6;1" calcMode="linear"/><animate attributeName="opacity" dur="5s" begin="0.0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.3;0.32;0.58;0.6;1"/></circle><circle r="4.5" class="v-pk" opacity="0"><animateMotion dur="5s" begin="0.45s" repeatCount="indefinite" path="M178 92 C 270 92, 290 142, 334 142" keyPoints="0;1;1" keyTimes="0;0.3;1" calcMode="linear"/><animate attributeName="opacity" dur="5s" begin="0.45s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;0.04;0.27;0.3;1"/></circle><circle r="4.5" class="v-pk" opacity="0"><animateMotion dur="5s" begin="0.45s" repeatCount="indefinite" path="M426 142 C 470 142, 500 92, 560 92" keyPoints="0;0;1;1" keyTimes="0;0.3;0.6;1" calcMode="linear"/><animate attributeName="opacity" dur="5s" begin="0.45s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.3;0.32;0.58;0.6;1"/></circle><circle r="4.5" class="v-pk" opacity="0"><animateMotion dur="5s" begin="0.9s" repeatCount="indefinite" path="M178 142 C 270 142, 290 142, 334 142" keyPoints="0;1;1" keyTimes="0;0.3;1" calcMode="linear"/><animate attributeName="opacity" dur="5s" begin="0.9s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;0.04;0.27;0.3;1"/></circle><circle r="4.5" class="v-pk" opacity="0"><animateMotion dur="5s" begin="0.9s" repeatCount="indefinite" path="M426 142 C 470 142, 500 142, 560 142" keyPoints="0;0;1;1" keyTimes="0;0.3;0.6;1" calcMode="linear"/><animate attributeName="opacity" dur="5s" begin="0.9s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.3;0.32;0.58;0.6;1"/></circle><circle r="4.5" class="v-pk" opacity="0"><animateMotion dur="5s" begin="1.35s" repeatCount="indefinite" path="M178 192 C 270 192, 290 142, 334 142" keyPoints="0;1;1" keyTimes="0;0.3;1" calcMode="linear"/><animate attributeName="opacity" dur="5s" begin="1.35s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;0.04;0.27;0.3;1"/></circle><circle r="4.5" class="v-pk" opacity="0"><animateMotion dur="5s" begin="1.35s" repeatCount="indefinite" path="M426 142 C 470 142, 500 192, 560 192" keyPoints="0;0;1;1" keyTimes="0;0.3;0.6;1" calcMode="linear"/><animate attributeName="opacity" dur="5s" begin="1.35s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.3;0.32;0.58;0.6;1"/></circle><circle r="4.5" class="v-pk" opacity="0"><animateMotion dur="5s" begin="1.8s" repeatCount="indefinite" path="M178 242 C 270 242, 290 142, 334 142" keyPoints="0;1;1" keyTimes="0;0.3;1" calcMode="linear"/><animate attributeName="opacity" dur="5s" begin="1.8s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;0.04;0.27;0.3;1"/></circle><circle r="4.5" class="v-pk" opacity="0"><animateMotion dur="5s" begin="1.8s" repeatCount="indefinite" path="M426 142 C 470 142, 500 242, 560 242" keyPoints="0;0;1;1" keyTimes="0;0.3;0.6;1" calcMode="linear"/><animate attributeName="opacity" dur="5s" begin="1.8s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.3;0.32;0.58;0.6;1"/></circle></svg></div>
+      <figcaption>Five tools, one timeline: every platform's events land in a single ordered stream. <button type="button" class="pmini" data-pause aria-pressed="false">Pause motion</button></figcaption>
+    </figure>
+
+    <div class="tabs" role="tablist" aria-label="Panel views">
+      <button role="tab" id="t0" aria-selected="true"  aria-controls="p0" type="button">Across platforms</button>
+      <button role="tab" id="t1" aria-selected="false" aria-controls="p1" type="button" tabindex="-1">Validation</button>
+      <button role="tab" id="t2" aria-selected="false" aria-controls="p2" type="button" tabindex="-1">Issues &amp; health</button>
+      <button role="tab" id="t3" aria-selected="false" aria-controls="p3" type="button" tabindex="-1">Consent mode</button>
+    </div>
+
+    <figure class="shot" id="p0" role="tabpanel" tabindex="0" aria-labelledby="t0">
+      <div class="frame"><div class="top" aria-hidden="true"><b></b><b></b><b></b></div>
+        <img src="img/across-platforms.webp" width="1280" height="800" alt="Eventloupe panel listing an add-to-cart event captured across several platforms on a live store" decoding="async"></div>
+      <figcaption>An add-to-cart on a live store, caught on every platform that fired it, in one timeline.</figcaption>
+    </figure>
+    <figure class="shot" id="p1" role="tabpanel" tabindex="0" aria-labelledby="t1" hidden>
+      <div class="frame"><div class="top" aria-hidden="true"><b></b><b></b><b></b></div>
+        <img src="img/validation.webp" width="1280" height="800" alt="Eventloupe validation tab with every check on an event passing" loading="lazy" decoding="async"></div>
+      <figcaption>Each event is checked against the platform's own documentation. Healthy events show clearly as healthy.</figcaption>
+    </figure>
+    <figure class="shot" id="p2" role="tabpanel" tabindex="0" aria-labelledby="t2" hidden>
+      <div class="frame"><div class="top" aria-hidden="true"><b></b><b></b><b></b></div>
+        <img src="img/issues-health.webp" width="1280" height="800" alt="Eventloupe issues panel and health score for a captured session" loading="lazy" decoding="async"></div>
+      <figcaption>Issues grouped by severity, with a health score that tells you what needs attention first.</figcaption>
+    </figure>
+    <figure class="shot" id="p3" role="tabpanel" tabindex="0" aria-labelledby="t3" hidden>
+      <div class="frame"><div class="top" aria-hidden="true"><b></b><b></b><b></b></div>
+        <img src="img/consent.webp" width="1280" height="800" alt="Eventloupe consent mode timeline showing consent signals alongside tracking events" loading="lazy" decoding="async"></div>
+      <figcaption>Consent signals on the same timeline as the events they affect.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ───────── PLATFORMS ───────── -->
+<section id="platforms" aria-labelledby="h-plat">
+  <div class="wrap">
+    <div class="trace" aria-hidden="true"><i class="unk"></i></div>
+    <p class="eyebrow">Coverage</p>
+    <h2 id="h-plat">21 platforms. One timeline.</h2>
+    <p class="sub">Eventloupe replaces switching between a handful of single-purpose debuggers. Every platform is read the same way and validated against its own documentation.</p>
+    <ul class="plats" role="list">
+      <li>dataLayer</li><li>Google Analytics 4</li><li>Google Tag Manager</li><li>Meta Pixel</li><li>TikTok Pixel</li><li>Google Ads</li><li>Snapchat Pixel</li>
+      <li>Pinterest Tag</li><li>LinkedIn Insight</li><li>Reddit Pixel</li><li>Segment</li><li>Adobe Analytics</li><li>Amplitude</li><li>Mixpanel</li>
+      <li>Microsoft UET</li><li>X Pixel</li><li>Criteo</li><li>Floodlight / CM360</li><li>Taboola</li><li>Outbrain</li><li>Quora Pixel</li>
+    </ul>
+    <p class="legal">All product names are trademarks of their respective owners. Eventloupe is an independent tool and isn't affiliated with or endorsed by any of them.</p>
+  </div>
+</section>
+
+<!-- ───────── PRIVACY ───────── -->
+<section class="paper" id="privacy" aria-labelledby="h-priv">
+  <div class="wrap">
+    <div class="trace" aria-hidden="true"><i class="ok"></i></div>
+    <p class="eyebrow">Privacy</p>
+    <h2 id="h-priv">It all stays in your browser.</h2>
+    <p class="sub">Eventloupe doesn't collect, transmit or store any data outside your browser.</p>
+    <div class="facts">
+      <div class="fact"><div class="k">Accounts</div><div class="v">None needed</div></div>
+      <div class="fact"><div class="k">Servers</div><div class="v">None used</div></div>
+      <div class="fact"><div class="k">Analytics inside</div><div class="v">None</div></div>
+      <div class="fact"><div class="k">Data lives</div><div class="v">In your browser</div></div>
+    </div>
+    <figure class="vis" id="perimeter">
+      <div class="svgwrap" role="region" tabindex="0" aria-label="Diagram of events staying inside the browser (scrolls sideways on small screens)"><svg class="anim" viewBox="0 0 760 300" role="img" aria-label="Events stay inside the browser: nothing crosses the boundary to servers, accounts or analytics" focusable="false"><text x="40" y="52" class="v-cap">YOUR BROWSER</text><rect x="20" y="20" width="470" height="262" rx="22" class="p-wall"/><g><rect x="40" y="90" width="110" height="56" rx="10" class="v-box"/><text x="95" y="123" text-anchor="middle" class="v-t">The page</text></g><g><rect x="200" y="90" width="130" height="56" rx="10" class="p-ext"/><text x="265" y="123" text-anchor="middle" class="p-ext-t">Eventloupe</text></g><g><rect x="200" y="196" width="130" height="56" rx="10" class="v-box"/><text x="265" y="220" text-anchor="middle" class="v-t">chrome.storage</text><text x="265" y="238" text-anchor="middle" class="v-s2">stays on this device</text></g><path d="M150 118 H198" class="v-wire solid" marker-end="url(#vArr2)"/><path d="M265 146 V194" class="v-wire solid" marker-end="url(#vArr2)"/><path d="M330 118 H486" class="v-wire"/><g class="p-x"><path d="M484 108 L500 128 M500 108 L484 128" stroke-linecap="round"/></g><g><rect x="560" y="60" width="190" height="48" rx="10" class="p-out"/><text x="578" y="90" class="v-t dim">Our servers <tspan class="v-s2">· none</tspan></text></g><path d="M504 84 H556" class="p-gap"/><g><rect x="560" y="128" width="190" height="48" rx="10" class="p-out"/><text x="578" y="158" class="v-t dim">Accounts <tspan class="v-s2">· none</tspan></text></g><path d="M504 152 H556" class="p-gap"/><g><rect x="560" y="196" width="190" height="48" rx="10" class="p-out"/><text x="578" y="226" class="v-t dim">Analytics <tspan class="v-s2">· none</tspan></text></g><path d="M504 220 H556" class="p-gap"/><defs><marker id="vArr2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L8 4L0 8z" class="v-arrow"/></marker></defs><circle r="4.5" class="v-pk" opacity="0"><animateMotion dur="4.5s" begin="0s" repeatCount="indefinite" path="M150 118 H198" keyPoints="0;1;1" keyTimes="0;0.2;1" calcMode="linear"/><animate attributeName="opacity" dur="4.5s" begin="0s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;0.03;0.18;0.2;1"/></circle><circle r="4.5" class="v-pk" opacity="0"><animateMotion dur="4.5s" begin="0s" repeatCount="indefinite" path="M265 146 V194" keyPoints="0;0;1;1" keyTimes="0;0.22;0.42;1" calcMode="linear"/><animate attributeName="opacity" dur="4.5s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.22;0.24;0.4;0.42;1"/></circle><circle r="4.5" class="v-pk warn" opacity="0"><animateMotion dur="4.5s" begin="0s" repeatCount="indefinite" path="M330 118 H478" keyPoints="0;0;1;1" keyTimes="0;0.5;0.78;1" calcMode="linear"/><animate attributeName="opacity" dur="4.5s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.5;0.53;0.76;0.8;1"/></circle><g class="p-x flash" opacity="0"><path d="M484 108 L500 128 M500 108 L484 128" stroke-linecap="round"/><animate attributeName="opacity" dur="4.5s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.77;0.8;0.9;0.95;1"/></g></svg></div>
+      <figcaption>Eventloupe watches the page's own requests and keeps what it sees inside your browser. It sends nothing of its own. <button type="button" class="pmini" data-pause aria-pressed="false">Pause motion</button></figcaption>
+    </figure>
+    <p class="note">This site practises the same thing. It loads no trackers, no third-party fonts and no analytics. Open Eventloupe on this page and see for yourself.</p>
+    <a class="link-arrow" href="privacy.html">Read the full privacy policy →</a>
+  </div>
+</section>
+
+<!-- ───────── CLOSING ───────── -->
+<section class="closing" aria-labelledby="h-close">
+  <div class="wrap close-grid">
+    <div>
+    <div class="trace" aria-hidden="true"><i class="ok"></i></div>
+    <p class="eyebrow">Launching soon</p>
+    <h2 id="h-close">Coming to the Chrome Web Store.</h2>
+    <p class="sub">Eventloupe is built for developers, analysts and marketers who need to know what a page really sent. Questions or feedback are welcome.</p>
+    <div class="cta-row">
+      <a class="pill primary" href="https://github.com/sibingop-dev/eventloupe-privacy/issues" rel="noopener">Share feedback on GitHub</a>
+      <a class="pill" href="privacy.html">Privacy policy</a>
+    </div>
+    </div>
+    <div class="resolve-col">
+      <div class="resolve" id="resolve" aria-hidden="true">
+        <canvas id="rc" width="336" height="336"></canvas>
+        <svg class="crisp" width="168" height="168" focusable="false"><use href="#lm"/></svg>
+        <i class="ring"></i>
+        <div class="lens2"><div class="mag"><div class="mag-in"><svg width="336" height="336" focusable="false"><use href="#lm"/></svg></div></div><i class="hdl"></i></div>
+      </div>
+      <p class="rtag">A magnifier for tracking events.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand big" href="./" aria-label="Eventloupe home"><span class="mark" aria-hidden="true"><svg width="56" height="56"><use href="#lm"/></svg></span><span class="word">Eventloupe</span></a>
+    <nav aria-label="Footer">
+      <a href="docs.html">Docs</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="licenses.txt">Open-source licences</a>
+      <a href="https://github.com/sibingop-dev/eventloupe-privacy/issues" rel="noopener">Contact</a>
+    </nav>
+    <p class="ftag">A magnifier for tracking events.</p>
+    <small>© <span id="yr">2026</span> Eventloupe. Fonts: Chivo, IBM Plex Sans and JetBrains Mono, used under the SIL Open Font License.</small>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
 </body>
 </html>
