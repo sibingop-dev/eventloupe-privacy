@@ -55,6 +55,31 @@
     a:hover { color: var(--accent); }
     strong { font-weight: 700; }
     footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+    .layout { display: block; }
+    .side { display: none; }
+    @media (min-width: 980px) {
+      .wrap { max-width: 980px; }
+      .layout { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 56px; }
+      .side { display: block; position: sticky; top: 28px; align-self: start; padding-top: 32px; }
+      .side b { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+      .side ol { list-style: none; margin-top: 12px; border-left: 2px solid var(--line); }
+      .side li { margin: 0; padding: 0; opacity: 1; }
+      .side li::before { display: none; }
+      .side a { display: block; padding: 5px 0 5px 14px; margin-left: -2px; border-left: 2px solid transparent; font-size: 14px; color: var(--muted); text-decoration: none; }
+      .side a:hover { color: var(--fg); }
+      .side a[aria-current="true"] { color: var(--accent-ink); border-left-color: var(--accent); font-weight: 600; }
+      nav.inline { display: none; }
+      main { max-width: 700px; }
+    }
+    .table-wrap { overflow-x: auto; margin: 4px 0 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+    table { width: 100%; border-collapse: collapse; font-size: 15px; text-align: left; }
+    th, td { padding: 14px 16px; vertical-align: top; border-bottom: 1px solid var(--line); }
+    tr:last-child td { border-bottom: 0; }
+    th { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; background: var(--code-bg); }
+    td:first-child { white-space: nowrap; }
+    td:last-child { opacity: .9; }
+    @media (max-width: 560px) { td:first-child { white-space: normal; } th, td { padding: 12px; } }
   </style>
 </head>
 <body>
@@ -69,6 +94,21 @@
     <p class="subtitle">Last updated: October 2026</p>
   </header>
 
+  <div class="layout">
+  <aside class="side" aria-label="Contents">
+    <b>Contents</b>
+    <ol>
+      <li><a href="#what">What Eventloupe does</a></li>
+      <li><a href="#not-collected">Data we do NOT collect</a></li>
+      <li><a href="#reads">What the extension reads on a page</a></li>
+      <li><a href="#storage">How captured data is stored</a></li>
+      <li><a href="#permissions">Permissions explained</a></li>
+      <li><a href="#third-party">Third-party services</a></li>
+      <li><a href="#children">Children's privacy</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </aside>
   <main>
   <div class="promise">
     Eventloupe does not collect, transmit, or store any data outside your browser.
@@ -82,7 +122,7 @@
     <div class="fact"><b>Data lives</b><span>In your browser</span></div>
   </div>
 
-  <nav aria-label="Contents">
+  <nav class="inline" aria-label="Contents">
     <b>Contents</b>
     <ol>
       <li><a href="#what">What Eventloupe does</a></li>
@@ -149,31 +189,33 @@
   <section id="permissions">
   <h2><span class="n">5</span>Permissions explained</h2>
   <p>Eventloupe requests the following Chrome permissions:</p>
-  <ul>
-    <li>
-      <strong>&lt;all_urls&gt;</strong> — required to inject the tracking interceptor
-      into any website you open for inspection. Without this, the extension cannot
-      observe tracking events on the page you are debugging.
-    </li>
-    <li>
-      <strong>webRequest</strong> — used to observe (not block or modify) network
-      requests made by tracking pixels that fire before the DevTools panel is opened,
-      such as early-loading beacons and server-side pixels.
-    </li>
-    <li>
-      <strong>scripting</strong> — required to inject a small JavaScript hook into
-      the inspected page's main context to intercept dataLayer pushes, gtag() calls,
-      fbq() calls, and other JS API-level tracking events.
-    </li>
-    <li>
-      <strong>tabs</strong> — used to read the current tab's URL so events can be
-      correctly grouped by page in the Eventloupe panel and audit reports.
-    </li>
-    <li>
-      <strong>storage</strong> — used to save your alert rule preferences locally
-      in your browser (see above).
-    </li>
-  </ul>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">Permission</th><th scope="col">Why it is needed</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>&lt;all_urls&gt;</code></td>
+        <td>Required to inject the tracking interceptor into any website you open for inspection. Without this, the extension cannot observe tracking events on the page you are debugging.</td>
+      </tr>
+      <tr>
+        <td><code>webRequest</code></td>
+        <td>Used to observe (not block or modify) network requests made by tracking pixels that fire before the DevTools panel is opened, such as early-loading beacons and server-side pixels.</td>
+      </tr>
+      <tr>
+        <td><code>scripting</code></td>
+        <td>Required to inject a small JavaScript hook into the inspected page's main context to intercept dataLayer pushes, gtag() calls, fbq() calls, and other JS API-level tracking events.</td>
+      </tr>
+      <tr>
+        <td><code>tabs</code></td>
+        <td>Used to read the current tab's URL so events can be correctly grouped by page in the Eventloupe panel and audit reports.</td>
+      </tr>
+      <tr>
+        <td><code>storage</code></td>
+        <td>Used to save your alert rule preferences locally in your browser (see above).</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
   </section>
 
   <section id="third-party">
@@ -211,6 +253,7 @@
   </p>
   </section>
   </main>
+  </div>
 
   <footer>
     <span>Eventloupe is a Chrome DevTools extension.</span>
@@ -218,5 +261,21 @@
   </footer>
 
 </div>
+<script>
+  // Highlights the contents link for the section being read. No libraries, no network.
+  (function () {
+    var links = document.querySelectorAll('.side a');
+    var sections = document.querySelectorAll('main section');
+    if (!('IntersectionObserver' in window) || !links.length) return;
+    function mark(id) {
+      links.forEach(function (a) { a.setAttribute('aria-current', a.getAttribute('href') === '#' + id ? 'true' : 'false'); });
+    }
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) mark(e.target.id); });
+    }, { rootMargin: '-15% 0px -70% 0px' });
+    sections.forEach(function (sec) { obs.observe(sec); });
+    mark('what');
+  })();
+</script>
 </body>
 </html>
