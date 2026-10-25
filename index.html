@@ -4,67 +4,127 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eventloupe — Privacy Policy</title>
+  <meta name="description" content="Eventloupe does not collect, transmit, or store any data outside your browser.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='26' fill='%23e4472b'/%3E%3Cg transform='translate(2 -2)'%3E%3Cpath d='M32 60H97' stroke='%23f4efe6' stroke-width='14'/%3E%3Cpath d='M90 60A30 30 0 1 0 81.2 81.2' fill='none' stroke='%23f4efe6' stroke-width='14'/%3E%3Cpath d='M83 83L104 104' stroke='%23161a22' stroke-width='14' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E">
   <style>
+    :root {
+      --bg: #f4efe6; --surface: #fffdf8; --fg: #161a22; --muted: #5d6471; --line: #e3dccd;
+      --accent: #e4472b; --accent-ink: #b8321a; --note-bg: #fbe9e3; --code-bg: #efe8da;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0f1218; --surface: #161a22; --fg: #f4efe6; --muted: #9aa3b5; --line: #262b38;
+        --accent: #ff6a4d; --accent-ink: #ff8a73; --note-bg: #251a19; --code-bg: #1e2430; }
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #0f0f0f;
-      color: #d0d0d0;
-      padding: 48px 24px;
-      max-width: 720px;
-      margin: 0 auto;
-      line-height: 1.7;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      background: var(--bg); color: var(--fg); line-height: 1.7;
+      padding: 0 max(20px, env(safe-area-inset-right)) 64px max(20px, env(safe-area-inset-left));
     }
-    h1 { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 8px; }
-    .subtitle { font-size: 13px; color: #666; margin-bottom: 40px; }
-    h2 { font-size: 15px; font-weight: 600; color: #fff; margin: 32px 0 10px; }
-    p { font-size: 14px; color: #aaa; margin-bottom: 12px; }
-    ul { font-size: 14px; color: #aaa; padding-left: 20px; margin-bottom: 12px; }
-    li { margin-bottom: 6px; }
-    .highlight {
-      background: #1a1a2e;
-      border: 1px solid #2a2a4a;
-      border-radius: 8px;
-      padding: 16px 20px;
-      margin: 24px 0;
-      font-size: 14px;
-      color: #7c9dff;
+    .wrap { max-width: 720px; margin: 0 auto; }
+    header { padding: 40px 0 8px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 18px; letter-spacing: .2px; }
+    .brand svg { flex-shrink: 0; }
+    h1 { font-size: clamp(30px, 6vw, 42px); line-height: 1.1; font-weight: 800; letter-spacing: -.8px; margin: 36px 0 10px; text-wrap: balance; }
+    .subtitle { font-size: 14px; color: var(--muted); }
+    .promise {
+      display: flex; gap: 14px; align-items: flex-start; margin: 32px 0 8px; padding: 20px 22px;
+      background: var(--note-bg); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 12px;
+      font-size: 16px; font-weight: 600; line-height: 1.55;
     }
-    a { color: #7c9dff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    footer { margin-top: 56px; font-size: 12px; color: #444; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0 8px; }
+    .fact { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+    .fact b { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; margin-bottom: 4px; }
+    .fact span { font-size: 15px; font-weight: 700; }
+    nav { margin: 32px 0 0; padding: 16px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+    nav b { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+    nav ol { margin: 8px 0 0 18px; columns: 2 220px; font-size: 14px; }
+    nav li { margin-bottom: 2px; padding-left: 4px; opacity: 1; }
+    nav li::before { display: none; }
+    section { padding-top: 8px; }
+    h2 { font-size: 20px; font-weight: 800; letter-spacing: -.2px; margin: 40px 0 12px; scroll-margin-top: 16px; }
+    h2 .n { color: var(--accent); font-variant-numeric: tabular-nums; margin-right: 8px; }
+    p { font-size: 15px; color: var(--fg); opacity: .86; margin-bottom: 12px; }
+    ul { font-size: 15px; padding-left: 4px; margin-bottom: 12px; list-style: none; }
+    li { margin-bottom: 10px; padding-left: 22px; position: relative; opacity: .9; }
+    li::before { content: ""; position: absolute; left: 2px; top: .7em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    ul.no li::before { background: transparent; border: 2px solid var(--accent); width: 10px; height: 10px; top: .6em; left: 1px; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .88em; background: var(--code-bg); padding: 2px 6px; border-radius: 5px; }
+    a { color: var(--accent-ink); text-underline-offset: 3px; }
+    a:hover { color: var(--accent); }
+    strong { font-weight: 700; }
+    footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   </style>
 </head>
 <body>
+<div class="wrap">
 
-  <h1>Eventloupe Privacy Policy</h1>
-  <p class="subtitle">Last updated: October 2026</p>
+  <header>
+    <div class="brand">
+      <svg width="34" height="34" viewBox="0 0 128 128" role="img" aria-label="Eventloupe logo"><rect width="128" height="128" rx="26" fill="#e4472b"/><g transform="translate(2 -2)"><path d="M32 60H97" stroke="#f4efe6" stroke-width="14"/><path d="M90 60A30 30 0 1 0 81.2 81.2" fill="none" stroke="#f4efe6" stroke-width="14"/><path d="M83 83L104 104" stroke="#161a22" stroke-width="14" stroke-linecap="round"/></g></svg>
+      Eventloupe
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">Last updated: October 2026</p>
+  </header>
 
-  <div class="highlight">
+  <main>
+  <div class="promise">
     Eventloupe does not collect, transmit, or store any data outside your browser.
     Everything stays on your device.
   </div>
 
-  <h2>What Eventloupe does</h2>
+  <div class="facts">
+    <div class="fact"><b>Accounts</b><span>None needed</span></div>
+    <div class="fact"><b>Servers</b><span>None used</span></div>
+    <div class="fact"><b>Analytics</b><span>None inside</span></div>
+    <div class="fact"><b>Data lives</b><span>In your browser</span></div>
+  </div>
+
+  <nav aria-label="Contents">
+    <b>Contents</b>
+    <ol>
+      <li><a href="#what">What Eventloupe does</a></li>
+      <li><a href="#not-collected">Data we do NOT collect</a></li>
+      <li><a href="#reads">What the extension reads on a page</a></li>
+      <li><a href="#storage">How captured data is stored</a></li>
+      <li><a href="#permissions">Permissions explained</a></li>
+      <li><a href="#third-party">Third-party services</a></li>
+      <li><a href="#children">Children's privacy</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+
+  <section id="what">
+  <h2><span class="n">1</span>What Eventloupe does</h2>
   <p>
     Eventloupe is a Chrome DevTools extension that helps developers and marketers
     inspect the analytics and tracking events fired on any website they are actively
     debugging. It captures and displays tracking requests (Google Analytics, Meta Pixel,
     TikTok, etc.) that are already visible in the Chrome DevTools Network tab.
   </p>
+  </section>
 
-  <h2>Data we do NOT collect</h2>
-  <ul>
+  <section id="not-collected">
+  <h2><span class="n">2</span>Data we do NOT collect</h2>
+  <ul class="no">
     <li>We do not collect any personal information about you</li>
     <li>We do not transmit any data to our servers or any third-party servers</li>
     <li>We do not use analytics, telemetry, or crash reporting</li>
     <li>We do not require an account or login</li>
     <li>We do not track which websites you visit</li>
   </ul>
+  </section>
 
-  <h2>What the extension reads on a page</h2>
-<p>To show you tracking events, Eventloupe runs a small script on web pages that observes calls to known analytics APIs (such as <code>dataLayer.push</code>, <code>gtag</code>, <code>fbq</code>) and requests to known tracking endpoints, including the request body where the event details are sent. Those events may contain identifiers that the site itself sends to its analytics vendors. Eventloupe does not send them anywhere: they are shown in the DevTools panel, kept temporarily in your browser as described below, and included in an export or report only when you create one yourself.</p>
-<h2>How captured data is stored</h2>
+  <section id="reads">
+  <h2><span class="n">3</span>What the extension reads on a page</h2>
+  <p>To show you tracking events, Eventloupe runs a small script on web pages that observes calls to known analytics APIs (such as <code>dataLayer.push</code>, <code>gtag</code>, <code>fbq</code>) and requests to known tracking endpoints, including the request body where the event details are sent. Those events may contain identifiers that the site itself sends to its analytics vendors. Eventloupe does not send them anywhere: they are shown in the DevTools panel, kept temporarily in your browser as described below, and included in an export or report only when you create one yourself.</p>
+  </section>
+
+  <section id="storage">
+  <h2><span class="n">4</span>How captured data is stored</h2>
   <p>
     Tracking events captured while you use Eventloupe are stored exclusively in your
     browser using Chrome's built-in storage APIs:
@@ -84,8 +144,10 @@
     No captured tracking data is ever written to disk beyond Chrome's own storage
     mechanisms, and none of it is ever sent outside your browser.
   </p>
+  </section>
 
-  <h2>Permissions explained</h2>
+  <section id="permissions">
+  <h2><span class="n">5</span>Permissions explained</h2>
   <p>Eventloupe requests the following Chrome permissions:</p>
   <ul>
     <li>
@@ -112,38 +174,49 @@
       in your browser (see above).
     </li>
   </ul>
+  </section>
 
-  <h2>Third-party services</h2>
+  <section id="third-party">
+  <h2><span class="n">6</span>Third-party services</h2>
   <p>
     Eventloupe does not integrate with or communicate with any third-party service.
     The extension operates entirely offline once installed.
   </p>
+  </section>
 
-  <h2>Children's privacy</h2>
+  <section id="children">
+  <h2><span class="n">7</span>Children's privacy</h2>
   <p>
     Eventloupe is a developer tool intended for adults. We do not knowingly collect
     any information from children.
   </p>
+  </section>
 
-  <h2>Changes to this policy</h2>
+  <section id="changes">
+  <h2><span class="n">8</span>Changes to this policy</h2>
   <p>
     If we make material changes to this privacy policy, we will update the
     "Last updated" date above. Continued use of the extension constitutes
     acceptance of any updated policy.
   </p>
+  </section>
 
-  <h2>Contact</h2>
+  <section id="contact">
+  <h2><span class="n">9</span>Contact</h2>
   <p>
     Questions about this privacy policy can be raised by opening an issue at
     <a href="https://github.com/sibingop-dev/eventloupe-privacy/issues" target="_blank" rel="noopener">
       github.com/sibingop-dev/eventloupe-privacy/issues
     </a>
   </p>
+  </section>
+  </main>
 
   <footer>
-    Eventloupe is a Chrome DevTools extension.
-    &copy; 2026 Eventloupe. All rights reserved.
+    <span>Eventloupe is a Chrome DevTools extension.</span>
+    <span>&copy; 2026 Eventloupe. All rights reserved.</span>
   </footer>
 
+</div>
 </body>
 </html>
