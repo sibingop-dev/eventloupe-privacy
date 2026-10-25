@@ -1,0 +1,18 @@
+# Eventloupe
+
+> Eventloupe is a Chrome DevTools extension, "a magnifier for tracking events". It shows every pixel, tag and dataLayer push a page fires, what was sent, and what was actually observed. Each event is marked observed, failed or unknown, and traced through six stages from the page to the server's response.
+
+Status: launching soon on the Chrome Web Store.
+
+## Key facts
+- Covers 21 sources in one DevTools panel: dataLayer, Google Analytics 4, Google Tag Manager, Meta Pixel, TikTok, Google Ads, Snapchat, Pinterest, LinkedIn, Reddit, Segment, Adobe Analytics, Amplitude, Mixpanel, Microsoft UET, X, Criteo, Floodlight/CM360, Taboola, Outbrain and Quora.
+- Three evidence states, never two: observed (for example HTTP 204), failed (for example HTTP 500) and unknown (not observable, recorded as null instead of guessed).
+- Six pipeline stages: Application, Tag Manager, SDK invocation, Network, Response, Correlation.
+- Diagnostics are rule-based with permanent codes from EL1000 to EL9999. The same input always gives the same result, and a code never fires on missing evidence alone.
+- The extension observes requests and never blocks or modifies them.
+- The extension collects, transmits and stores no data outside the browser. It has no accounts, servers or analytics.
+
+## Pages
+- [Home](https://eventloupe.com/): overview, comparison with pass/fail debuggers, diagnostic code examples and FAQ.
+- [Docs](https://eventloupe.com/docs.html): opening the panel, reading an event, the six stages, code ranges, permissions and FAQ.
+- [Privacy policy](https://eventloupe.com/privacy.html): what the extension reads, how data is stored, permissions, and how this website's optional analytics work.

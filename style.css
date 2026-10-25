@@ -581,3 +581,20 @@ footer .ftag { flex-basis: 100%; margin: -6px 0 0; font: 500 14px/1.4 var(--mono
 
 .wl-soon { margin-top: 34px; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; max-width: 34rem; }
 .wl-soon .wl-note { margin-top: 0; }
+
+/* FAQ on the home page */
+.faq-list { margin-top: 40px; max-width: 52rem; }
+.faq-list details { border-top: 1px solid var(--line); padding: 4px 0; }
+.faq-list details:last-child { border-bottom: 1px solid var(--line); }
+.faq-list summary { cursor: pointer; padding: 18px 0; font: 600 1.08rem/1.4 var(--body); color: var(--text); list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: "+"; content: "+" / ""; font: 500 1.2rem/1 var(--mono); color: var(--red-hi); }
+.faq-list details[open] summary::after { content: "\2212"; content: "\2212" / ""; }
+.faq-list details p { padding-bottom: 18px; color: #c9ccd3; max-width: 46rem; }
+
+/* 404 */
+.nf { min-height: 100svh; display: grid; place-items: center; padding: 120px var(--gutter) 80px; text-align: left; }
+.nf .box { max-width: 36rem; }
+.nf h1 { font-size: clamp(2.4rem, 7vw, 4.2rem); margin: 14px 0 18px; }
+.nf p { color: #c9ccd3; }
+.nf .cta-row { margin-top: 28px; }

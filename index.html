@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Eventloupe — a magnifier for tracking events</title>
-<meta name="description" content="Eventloupe is a Chrome DevTools extension that shows every pixel, tag and dataLayer push a page fires, what was sent, and what was actually observed.">
+<title>Eventloupe — GA4, Meta Pixel & dataLayer debugger for Chrome</title>
+<meta name="description" content="Chrome DevTools extension to debug GA4, Meta Pixel, GTM and dataLayer events: see what each tag fired, what was sent, and what was actually observed.">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0d1016">
 <link rel="canonical" href="https://eventloupe.com/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -14,15 +15,126 @@
 <link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Eventloupe">
+<meta property="og:locale" content="en_US">
 <meta property="og:title" content="Eventloupe — a magnifier for tracking events">
 <meta property="og:description" content="See every pixel, tag and dataLayer push a page fires, what was sent, and what was actually observed.">
 <meta property="og:url" content="https://eventloupe.com/">
 <meta property="og:image" content="https://eventloupe.com/img/og.png">
-<meta property="og:image:width" content="440">
-<meta property="og:image:height" content="280">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Eventloupe: a magnifier for tracking events. See what your page really sends.">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Eventloupe — a magnifier for tracking events">
+<meta name="twitter:description" content="See every pixel, tag and dataLayer push a page fires, what was sent, and what was actually observed.">
+<meta name="twitter:image" content="https://eventloupe.com/img/og.png">
+<meta name="twitter:image:alt" content="Eventloupe: a magnifier for tracking events. See what your page really sends.">
 <script>(function(d){d.classList.add("js");try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&!sessionStorage.getItem("el-intro")){d.classList.add("intro");sessionStorage.setItem("el-intro","1")}}catch(e){}})(document.documentElement)</script>
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://eventloupe.com/#org",
+   "name": "Eventloupe",
+   "url": "https://eventloupe.com/",
+   "logo": "https://eventloupe.com/img/icon-128.png"
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://eventloupe.com/#website",
+   "url": "https://eventloupe.com/",
+   "name": "Eventloupe",
+   "description": "A magnifier for tracking events.",
+   "inLanguage": "en",
+   "publisher": {
+    "@id": "https://eventloupe.com/#org"
+   }
+  },
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://eventloupe.com/#app",
+   "name": "Eventloupe",
+   "description": "Chrome DevTools extension to debug GA4, Meta Pixel, GTM and dataLayer events: see what each tag fired, what was sent, and what was actually observed.",
+   "url": "https://eventloupe.com/",
+   "image": "https://eventloupe.com/img/og.png",
+   "applicationCategory": "DeveloperApplication",
+   "applicationSubCategory": "Tag and dataLayer debugging",
+   "operatingSystem": "Chrome on Windows, macOS, Linux and ChromeOS",
+   "browserRequirements": "Requires Google Chrome with DevTools",
+   "softwareVersion": "1.0.0",
+   "inLanguage": "en",
+   "publisher": {
+    "@id": "https://eventloupe.com/#org"
+   },
+   "featureList": [
+    "Captures dataLayer pushes, SDK calls and network requests across 21 platforms",
+    "Three evidence states: observed, failed or unknown",
+    "Six-stage pipeline from page to response",
+    "Rule-based diagnostic codes (EL1000 to EL9999)",
+    "Validation against platform documentation",
+    "Captured events stay in your browser"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://eventloupe.com/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is Eventloupe?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Eventloupe is a Chrome DevTools extension that shows every pixel, tag and dataLayer push a page fires, what was sent, and what was actually observed. It covers 21 platforms in one panel."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How is Eventloupe different from a pass/fail tag debugger?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A typical debugger reports success or failure. Eventloupe records three states: observed, failed or unknown. A missing response is shown as unknown instead of being guessed, and each event is traced through six stages from the page to the response."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which platforms does Eventloupe support?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Google Analytics 4, Google Tag Manager, Meta Pixel, TikTok, Google Ads, Snapchat, Pinterest, LinkedIn, Reddit, Segment, Adobe Analytics, Amplitude, Mixpanel, Microsoft UET, X, Criteo, Floodlight, Taboola, Outbrain, Quora and the dataLayer."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does Eventloupe block or change requests?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It only observes requests. It never blocks or modifies them."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does the Eventloupe extension send my data anywhere?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Captured events stay in your browser. The extension has no accounts, no servers and no analytics."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "When is Eventloupe available?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Eventloupe is launching soon on the Chrome Web Store."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script src="consent.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -402,7 +514,7 @@
     <div class="trace" aria-hidden="true"><i class="ok"></i></div>
     <p class="eyebrow">Privacy</p>
     <h2 id="h-priv">It all stays in your browser.</h2>
-    <p class="sub">Eventloupe doesn't collect, transmit or store any data outside your browser.</p>
+    <p class="sub">The Eventloupe extension doesn't collect, transmit or store any data outside your browser.</p>
     <div class="facts">
       <div class="fact"><div class="k">Accounts</div><div class="v">None needed</div></div>
       <div class="fact"><div class="k">Servers</div><div class="v">None used</div></div>
@@ -413,8 +525,25 @@
       <div class="svgwrap" role="region" tabindex="0" aria-label="Diagram of events staying inside the browser (scrolls sideways on small screens)"><svg class="anim" viewBox="0 0 760 300" role="img" aria-label="Events stay inside the browser: nothing crosses the boundary to servers, accounts or analytics" focusable="false"><text x="40" y="52" class="v-cap">YOUR BROWSER</text><rect x="20" y="20" width="470" height="262" rx="22" class="p-wall"/><g><rect x="40" y="90" width="110" height="56" rx="10" class="v-box"/><text x="95" y="123" text-anchor="middle" class="v-t">The page</text></g><g><rect x="200" y="90" width="130" height="56" rx="10" class="p-ext"/><text x="265" y="123" text-anchor="middle" class="p-ext-t">Eventloupe</text></g><g><rect x="200" y="196" width="130" height="56" rx="10" class="v-box"/><text x="265" y="220" text-anchor="middle" class="v-t">chrome.storage</text><text x="265" y="238" text-anchor="middle" class="v-s2">stays on this device</text></g><path d="M150 118 H198" class="v-wire solid" marker-end="url(#vArr2)"/><path d="M265 146 V194" class="v-wire solid" marker-end="url(#vArr2)"/><path d="M330 118 H486" class="v-wire"/><g class="p-x"><path d="M484 108 L500 128 M500 108 L484 128" stroke-linecap="round"/></g><g><rect x="560" y="60" width="190" height="48" rx="10" class="p-out"/><text x="578" y="90" class="v-t dim">Our servers <tspan class="v-s2">· none</tspan></text></g><path d="M504 84 H556" class="p-gap"/><g><rect x="560" y="128" width="190" height="48" rx="10" class="p-out"/><text x="578" y="158" class="v-t dim">Accounts <tspan class="v-s2">· none</tspan></text></g><path d="M504 152 H556" class="p-gap"/><g><rect x="560" y="196" width="190" height="48" rx="10" class="p-out"/><text x="578" y="226" class="v-t dim">Analytics <tspan class="v-s2">· none</tspan></text></g><path d="M504 220 H556" class="p-gap"/><defs><marker id="vArr2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L8 4L0 8z" class="v-arrow"/></marker></defs><circle r="4.5" class="v-pk" opacity="0"><animateMotion dur="4.5s" begin="0s" repeatCount="indefinite" path="M150 118 H198" keyPoints="0;1;1" keyTimes="0;0.2;1" calcMode="linear"/><animate attributeName="opacity" dur="4.5s" begin="0s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;0.03;0.18;0.2;1"/></circle><circle r="4.5" class="v-pk" opacity="0"><animateMotion dur="4.5s" begin="0s" repeatCount="indefinite" path="M265 146 V194" keyPoints="0;0;1;1" keyTimes="0;0.22;0.42;1" calcMode="linear"/><animate attributeName="opacity" dur="4.5s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.22;0.24;0.4;0.42;1"/></circle><circle r="4.5" class="v-pk warn" opacity="0"><animateMotion dur="4.5s" begin="0s" repeatCount="indefinite" path="M330 118 H478" keyPoints="0;0;1;1" keyTimes="0;0.5;0.78;1" calcMode="linear"/><animate attributeName="opacity" dur="4.5s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.5;0.53;0.76;0.8;1"/></circle><g class="p-x flash" opacity="0"><path d="M484 108 L500 128 M500 108 L484 128" stroke-linecap="round"/><animate attributeName="opacity" dur="4.5s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.77;0.8;0.9;0.95;1"/></g></svg></div>
       <figcaption>Eventloupe watches the page's own requests and keeps what it sees inside your browser. It sends nothing of its own. <button type="button" class="pmini" data-pause aria-pressed="false">Pause motion</button></figcaption>
     </figure>
-    <p class="note">This site practises the same thing. It loads no trackers, no third-party fonts and no analytics. Open Eventloupe on this page and see for yourself.</p>
+    <p class="note">This site is held to the same standard. Its fonts, scripts and images all come from eventloupe.com, and analytics (Google Tag Manager) loads only if you accept it. Decline, and nothing from Google loads at all. Open Eventloupe on this page and check.</p>
     <a class="link-arrow" href="privacy.html">Read the full privacy policy →</a>
+  </div>
+</section>
+
+<!-- ───────── FAQ ───────── -->
+<section id="faq" class="faq" aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="trace" aria-hidden="true"><i class="ok"></i></div>
+    <p class="eyebrow">Questions</p>
+    <h2 id="h-faq">Questions people ask.</h2>
+    <div class="faq-list">
+      <details><summary>What is Eventloupe?</summary><p>Eventloupe is a Chrome DevTools extension that shows every pixel, tag and dataLayer push a page fires, what was sent, and what was actually observed. It covers 21 platforms in one panel.</p></details>
+      <details><summary>How is Eventloupe different from a pass/fail tag debugger?</summary><p>A typical debugger reports success or failure. Eventloupe records three states: observed, failed or unknown. A missing response is shown as unknown instead of being guessed, and each event is traced through six stages from the page to the response.</p></details>
+      <details><summary>Which platforms does Eventloupe support?</summary><p>Google Analytics 4, Google Tag Manager, Meta Pixel, TikTok, Google Ads, Snapchat, Pinterest, LinkedIn, Reddit, Segment, Adobe Analytics, Amplitude, Mixpanel, Microsoft UET, X, Criteo, Floodlight, Taboola, Outbrain, Quora and the dataLayer.</p></details>
+      <details><summary>Does Eventloupe block or change requests?</summary><p>No. It only observes requests. It never blocks or modifies them.</p></details>
+      <details><summary>Does the Eventloupe extension send my data anywhere?</summary><p>No. Captured events stay in your browser. The extension has no accounts, no servers and no analytics.</p></details>
+      <details><summary>When is Eventloupe available?</summary><p>Eventloupe is launching soon on the Chrome Web Store.</p></details>
+    </div>
   </div>
 </section>
 
@@ -450,6 +579,7 @@
     <nav aria-label="Footer">
       <a href="docs.html">Docs</a>
       <a href="privacy.html">Privacy</a>
+      <button type="button" class="linkbtn" data-consent-open>Analytics choice</button>
       <a href="licenses.txt">Open-source licences</a>
       <a href="https://github.com/sibingop-dev/eventloupe-privacy/issues" rel="noopener">Contact</a>
     </nav>
