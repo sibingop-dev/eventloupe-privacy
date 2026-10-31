@@ -1,0 +1,208 @@
+# Eventloupe
+
+> Eventloupe is a Chrome DevTools extension, "a magnifier for tracking events". It shows every pixel, tag and dataLayer push a page fires, what was sent, and what was actually observed. Each event is marked observed, failed or unknown, and traced through six stages from the page to the server's response.
+
+Status: launching soon on the Chrome Web Store.
+
+## Key facts
+- Covers 21 sources in one DevTools panel: dataLayer, Google Analytics 4, Google Tag Manager, Meta Pixel, TikTok, Google Ads, Snapchat, Pinterest, LinkedIn, Reddit, Segment, Adobe Analytics, Amplitude, Mixpanel, Microsoft UET, X, Criteo, Floodlight/CM360, Taboola, Outbrain and Quora.
+- Three evidence states, never two: observed (for example HTTP 204), failed (for example HTTP 500) and unknown (not observable, recorded as null instead of guessed).
+- Six pipeline stages: Application, Tag Manager, SDK invocation, Network, Response, Correlation.
+- Diagnostics are rule-based with permanent codes from EL1000 to EL9999. The same input always gives the same result, and a code never fires on missing evidence alone.
+- The extension observes requests and never blocks or modifies them.
+- The extension collects, transmits and stores no data outside the browser. It has no accounts, servers or analytics.
+
+## Documentation (full text of https://eventloupe.com/docs.html)
+
+Documentation
+
+# Eventloupe docs
+
+How to open the panel, how to read what it tells you, and what every diagnostic code means.
+
+## Getting started
+
+Eventloupe is a Chrome DevTools extension. It's launching on the Chrome Web Store soon, so there's no public download yet.
+
+### Open the panel
+
+Chrome has no way for an extension to open DevTools for you, so there are three steps:
+- On the page you want to inspect, press ⌘ ⌥ I on a Mac or Ctrl Shift I elsewhere. F12 works too.
+- Select the Eventloupe tab, next to Network and Console. If it's hidden, use the » menu.
+- Keep DevTools open while you browse. Events appear as the page fires them.
+
+### What you'll see
+- The feed: every event in time order, grouped when the same event fires in a burst.
+- The detail pane: Pipeline, Normalized, Payload, Ecom, Validation and Request views for the selected event.
+- The issues panel and health score: what needs attention first, grouped by severity.
+
+## Reading an event
+
+### Three states, never two
+
+| State | Example | Meaning
+
+| Observed | httpStatus: 204 | The request was seen and the response came back clean.
+
+| Failed | httpStatus: 500 | The request was seen and delivery was confirmed to have failed.
+
+| Unknown | httpStatus: null | Not observable from the browser. It is never treated as success or failure.
+
+### The six stages
+
+Every event is traced through the same pipeline. Each stage is marked observed, failed or unknown.
+
+| Stage | What it looks at | Unknown when
+
+| Application | The page's own call: a dataLayer push or an SDK call. | The call ran before Eventloupe could hook it.
+
+| Tag Manager | Container load, and the dataLayer push that came just before the tag fired. | No container was observed.
+
+| SDK invocation | The platform SDK call, hooked inside the page. | The SDK runs where the hook can't reach, such as a sandboxed iframe.
+
+| Network | The request the browser sent: endpoint, method, parameters, body. | The browser didn't expose the request.
+
+| Response | HTTP status and timing. | The status isn't observable, for example a beacon.
+
+| Correlation | Duplicates, funnel steps and browser/server pairs. | No related event was observed.
+
+### Confidence and severity are separate
+
+Confidence is how much evidence supports an event. Severity is how serious a finding is. They never imply each other: low confidence isn't an error, and high confidence isn't success. A fully observed event can still have a critical finding if delivery was confirmed to fail.
+
+## Diagnostic codes
+
+Every finding has a code like EL1003. Codes are permanent identifiers: the message may be reworded, but the code never changes. They come from fixed rules, so the same input always gives the same result, and a code never fires on missing evidence alone.
+
+### Code ranges
+
+| Range | Group
+
+| EL1000–1999 | Network
+
+| EL2000–2999 | Platform SDK
+
+| EL3000–3999 | GTM / Tag Manager
+
+| EL4000–4999 | Consent
+
+| EL5000–5999 | Attribution
+
+| EL6000–6999 | Data quality
+
+| EL7000–7999 | Ecommerce
+
+| EL8000–8999 | Identity and matching
+
+| EL9000–9999 | System and configuration
+
+### Examples
+
+EL1001Medium
+
+#### Network request not observed
+
+The JS API call was intercepted, but no matching network request was seen.
+
+FixCheck whether a consent manager or ad blocker is suppressing the request.
+
+EL1002Critical
+
+#### HTTP 4xx client error
+
+The tracking server rejected the request, so the event was lost.
+
+FixCheck the payload for malformed parameters or an invalid pixel ID.
+
+EL1003Critical
+
+#### HTTP 5xx server error
+
+The tracking server returned an error, so the platform failed to record the event.
+
+FixThis is platform-side. Retry, or check the platform's status.
+
+EL2003High
+
+#### Event ID mismatch
+
+The event_id in the JS call doesn't match the one in the network request.
+
+FixPass the same event_id to fbq() and to the CAPI server call.
+
+EL4002Medium
+
+#### ad_storage denied on a conversion
+
+The conversion may not be attributed to the right ad click.
+
+FixMake sure Consent Mode is configured correctly for your consent platform.
+
+EL4012Critical
+
+#### Consent default set after config
+
+gtag("consent","default") fired after gtag("config"), so tags may have fired with the wrong consent state.
+
+FixMove the consent default before any config call, ahead of your tag manager.
+
+Eventloupe reports what it observed. A request it doesn't see is "not observed", and the suggested fixes name likely causes without claiming one.
+
+## Permissions
+
+Eventloupe asks for the following Chrome permissions. None of them lets it send data anywhere.
+
+| Permission | Why it is needed
+
+| <all_urls> | To inject the tracking interceptor into any website you open for inspection.
+
+| webRequest | To observe (not block or modify) network requests from tracking pixels that fire before DevTools is opened.
+
+| scripting | To inject a small hook into the inspected page to intercept dataLayer pushes and SDK calls.
+
+| tabs | To read the current tab's URL so events are grouped by page.
+
+| storage | To save your alert-rule preferences locally in your browser.
+
+Read the full privacy policy →
+
+## Platforms
+
+21 sources are read the same way and validated against their own documentation.
+- dataLayer
+- Google Analytics 4
+- Google Tag Manager
+- Meta Pixel
+- TikTok Pixel
+- Google Ads
+- Snapchat Pixel
+- Pinterest Tag
+- LinkedIn Insight
+- Reddit Pixel
+- Segment
+- Adobe Analytics
+- Amplitude
+- Mixpanel
+- Microsoft UET
+- X Pixel
+- Criteo
+- Floodlight / CM360
+- Taboola
+- Outbrain
+- Quora Pixel
+
+All product names are trademarks of their respective owners. Eventloupe is an independent tool and isn't affiliated with or endorsed by any of them.
+
+## FAQ
+
+Why does an event say "unknown"?
+Because the browser didn't expose the evidence, for example a response to a beacon. Eventloupe records that as unknown instead of guessing success or failure.
+
+Why doesn't it say "blocked by an ad blocker"?
+It can't tell. It sees that an SDK call happened and no matching request followed, so it reports "not observed" and suggests an ad blocker or consent manager as a likely cause to check.
+
+Does Eventloupe block or change any requests?
+No. It observes requests and never blocks or modifies them.
+
+Does it send my data anywhere?
+No. Captured events stay in your browser. See the privacy policy.

@@ -16,3 +16,4 @@ Status: launching soon on the Chrome Web Store.
 - [Home](https://eventloupe.com/): overview, comparison with pass/fail debuggers, diagnostic code examples and FAQ.
 - [Docs](https://eventloupe.com/docs.html): opening the panel, reading an event, the six stages, code ranges, permissions and FAQ.
 - [Privacy policy](https://eventloupe.com/privacy.html): what the extension reads, how data is stored, permissions, and how this website's optional analytics work.
+- [Full documentation text for LLMs](https://eventloupe.com/llms-full.txt): the docs page as plain text.
