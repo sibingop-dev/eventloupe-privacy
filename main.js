@@ -184,7 +184,7 @@
     var w = 0, h = 0, cols = 0, rows = 0
     var fires = [], packets = []
     var gap = small ? 190 : 80          // ms between fires; doubles if the frame budget slips
-    var paused = false, level = 0, nextFire = 0, running = false, inView = true, raf = 0, prev = 0, acc = 0, frames = 0
+    var paused = false, level = 0, nextFire = 0, running = false, inView = true, raf = 0, prev = 0, acc = 0, frames = 0, born = 0, MAXMS = 9000
     var COL = { brand: '#f4694e', ok: '#3fb67a', bad: '#ff4d38', unk: '#8b95a7' }
 
     var size = function () {
@@ -250,11 +250,13 @@
     var frame = function (now) {
       if (!running) return
       prev = now
+      if (!born) born = now
+      if (now - born > MAXMS && !fires.length && !packets.length) { stop(); staticFrame(); return }
       if (frames >= 90) {                        // cost guard: our own draw time, not the display's frame rate
         if (acc / frames > 3) { level++; gap *= 2; if (level >= 2) { stop(); ctx.clearRect(0, 0, w, h); return } }
         acc = 0; frames = 0
       }
-      if (cols && rows && now >= nextFire && fires.length < 16) {
+      if (cols && rows && now >= nextFire && fires.length < 16 && now - born <= MAXMS) {
         var c = (Math.random() * cols) | 0, r = (Math.random() * Math.max(1, rows - 2)) | 0, k = kind()
         fires.push({ c: c, r: r, k: k, t0: now })
         if (packets.length < 48) {

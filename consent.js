@@ -50,10 +50,11 @@
     'background:#141821;color:#e8e6e1;border:1px solid #3a4355;border-radius:14px;padding:18px 20px;box-shadow:0 20px 50px rgba(0,0,0,.55);' +
     'font:400 14.5px/1.55 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center}' +
     '#el-consent[hidden]{display:none}#el-consent p{margin:0;flex:1 1 320px;color:#d3d7e0}#el-consent a{color:#fff;text-underline-offset:3px}' +
-    '#el-consent .b{display:flex;gap:10px;flex-wrap:wrap}' +
+    '#el-consent a{display:inline-block;padding-block:10px;margin-block:-10px}#el-consent .b{display:flex;gap:10px;flex-wrap:wrap}' +
     '#el-consent button{min-height:44px;padding:0 20px;border-radius:999px;font:600 14.5px/1 "IBM Plex Sans",system-ui,sans-serif;cursor:pointer;border:1.5px solid #6b7587;background:transparent;color:#e8e6e1}' +
     '#el-consent button:hover{border-color:#fff}#el-consent button.y{background:#d13b20;border-color:#d13b20;color:#fff}#el-consent button.y:hover{background:#fff;border-color:#fff;color:#0d1016}' +
     '#el-consent button:focus-visible{outline:2px solid #f4694e;outline-offset:3px}' +
+    '@media(max-width:620px){#el-consent{padding:12px 14px;gap:10px 12px;font-size:13.5px;line-height:1.45;border-radius:12px;left:max(10px,env(safe-area-inset-left,0px));right:max(10px,env(safe-area-inset-right,0px));bottom:max(10px,env(safe-area-inset-bottom,0px))}#el-consent p{flex:1 1 100%}#el-consent .el-lead{display:none}#el-consent .b{width:100%}#el-consent button{flex:1;padding:0 12px;min-height:44px}}' +
     '.linkbtn{background:none;border:0;padding:10px 0;font:inherit;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}'
   var st = d.createElement('style'); st.textContent = css; d.head.appendChild(st)
 
@@ -78,7 +79,7 @@
     var cur = read()
     d.getElementById('el-consent-msg').innerHTML = reopen && cur
       ? 'Your analytics choice is <strong>' + (cur === 'granted' ? 'accepted' : 'declined') + '</strong>. You can change it here. <a href="privacy.html#website">How this site uses analytics</a>.'
-      : 'This site can use Google Tag Manager for page analytics. <strong>Nothing from Google loads until you accept.</strong> <a href="privacy.html#website">Details</a>'
+      : '<span class="el-lead">This site can use Google Tag Manager for page analytics. </span><strong>Nothing from Google loads until you accept.</strong> <a href="privacy.html#website">Details</a>'
     b.hidden = false
   }
 

@@ -145,11 +145,11 @@
     <a class="brand" href="./" aria-label="Eventloupe home"><span class="mark" aria-hidden="true"><svg width="44" height="44"><use href="#lm"/></svg></span><span class="word">Eventloupe</span><span class="navtag">A magnifier for tracking events</span></a>
     <nav aria-label="Primary">
       <ul>
-        <li><a href="#how">How it works</a></li>
+        <li class="keep"><a href="#how">How it works</a></li>
         <li><a href="#panel">The panel</a></li>
         <li class="keep"><a href="docs.html">Docs</a></li>
         <li><a href="#platforms">Platforms</a></li>
-        <li class="keep"><a href="privacy.html">Privacy</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
       </ul>
     </nav>
   </div>
@@ -182,7 +182,7 @@
            attribute, delete the #wl-soon block below, and apply store/waitlist-privacy-addendum.md to the privacy page. -->
       <div class="wl-soon" id="wl-soon">
         <p class="wl-note"><i aria-hidden="true"></i>Chrome extension, launching soon on the Chrome Web Store.</p>
-        <a class="pill primary" href="https://github.com/sibingop-dev/eventloupe-privacy/issues" rel="noopener">Share feedback on GitHub</a>
+        <a class="pill primary" href="docs.html">Read the docs</a>
       </div>
       <form class="waitlist" id="waitlist" novalidate data-endpoint="" aria-label="Join the waitlist" hidden>
         <div class="wl-row">
@@ -193,7 +193,7 @@
         </div>
         <p class="wl-note" id="wl-note" role="status" aria-live="polite"><i aria-hidden="true"></i>Chrome extension, launching soon on the Chrome Web Store. We'll email you once, when it's live.</p>
       </form>
-      <p class="hero-links"><a href="#how">See how it works <span aria-hidden="true">↓</span></a><a href="privacy.html">Privacy policy</a></p>
+      <p class="hero-links"><a href="#panel">See the panel <span aria-hidden="true">↓</span></a><a href="https://github.com/sibingop-dev/eventloupe-privacy/issues" rel="noopener">Report a bug or share feedback</a></p>
     </div>
 
     <div class="stage-wrap">
@@ -252,7 +252,6 @@
   </div>
 </section>
 
-<div class="rail" aria-hidden="true"><div class="track"><div class="grp"><span class="chip ok"><b>GA4</b> page_view <span class="g">✓ 204</span></span><span class="chip ok"><b>Meta Pixel</b> PageView <span class="g">✓ 200</span></span><span class="chip unk"><b>TikTok</b> ViewContent <span class="g">? unknown</span></span><span class="chip ok"><b>GTM</b> gtm.js <span class="g">✓ 200</span></span><span class="chip bad"><b>Google Ads</b> conversion <span class="g">✗ 500</span></span><span class="chip ok"><b>dataLayer</b> purchase <span class="g">✓ seen</span></span><span class="chip ok"><b>Pinterest</b> pagevisit <span class="g">✓ 200</span></span><span class="chip unk"><b>LinkedIn</b> insight <span class="g">? unknown</span></span><span class="chip ok"><b>Segment</b> track <span class="g">✓ 200</span></span><span class="chip ok"><b>Consent</b> ad_storage <span class="g">✓ denied</span></span><span class="chip bad"><b>Meta Pixel</b> Purchase <span class="g">✗ 400</span></span><span class="chip ok"><b>GA4</b> add_to_cart <span class="g">✓ 204</span></span></div><div class="grp"><span class="chip ok"><b>GA4</b> page_view <span class="g">✓ 204</span></span><span class="chip ok"><b>Meta Pixel</b> PageView <span class="g">✓ 200</span></span><span class="chip unk"><b>TikTok</b> ViewContent <span class="g">? unknown</span></span><span class="chip ok"><b>GTM</b> gtm.js <span class="g">✓ 200</span></span><span class="chip bad"><b>Google Ads</b> conversion <span class="g">✗ 500</span></span><span class="chip ok"><b>dataLayer</b> purchase <span class="g">✓ seen</span></span><span class="chip ok"><b>Pinterest</b> pagevisit <span class="g">✓ 200</span></span><span class="chip unk"><b>LinkedIn</b> insight <span class="g">? unknown</span></span><span class="chip ok"><b>Segment</b> track <span class="g">✓ 200</span></span><span class="chip ok"><b>Consent</b> ad_storage <span class="g">✓ denied</span></span><span class="chip bad"><b>Meta Pixel</b> Purchase <span class="g">✗ 400</span></span><span class="chip ok"><b>GA4</b> add_to_cart <span class="g">✓ 204</span></span></div></div></div>
 
 <!-- ───────── THREE QUESTIONS ───────── -->
 <section class="paper" id="how" aria-labelledby="h-how">
@@ -307,24 +306,6 @@
       </div>
     </div>
 
-    <div class="blk">
-      <h3 class="blk-h">Standard debuggers vs. Eventloupe</h3>
-      <div class="tbl-wrap" role="region" aria-label="Comparison table (scrolls sideways on small screens)" tabindex="0">
-        <table class="matrix">
-          <caption class="sr-only">A typical pass/fail debugger compared with Eventloupe</caption>
-          <thead><tr><th scope="col"><span class="sr-only">Capability</span></th><th scope="col">Standard debuggers</th><th scope="col" class="ev">Eventloupe</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">Status model</th><td>Success or fail. Two states.</td><td>Observed, failed or unknown. Three states.</td></tr>
-            <tr><th scope="row">What it relies on</th><td>Typically the SDK's own report of what it did</td><td>The network request and its response, alongside the SDK call</td></tr>
-            <tr><th scope="row">Missing evidence</th><td>Has to be shown as a pass or a fail</td><td>Shown as unknown, never guessed</td></tr>
-            <tr><th scope="row">Delivery</th><td>Not verified</td><td>Response status recorded where the browser exposes it</td></tr>
-            <tr><th scope="row">The report</th><td>A pass/fail badge</td><td>An evidence trail: six stages, each marked observed, failed or unknown</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="legal">"Standard debuggers" describes the common pass/fail approach, not any specific product.</p>
-    </div>
-
     <div class="blk ba" id="ba">
       <h3 class="blk-h">Same event, two answers</h3>
       <div class="ba-grid">
@@ -341,6 +322,7 @@
             <li class="s ok" style="--i:2"><i aria-hidden="true">✓</i>SDK</li>
             <li class="s ok" style="--i:3"><i aria-hidden="true">✓</i>Network</li>
             <li class="s bad" style="--i:4"><i aria-hidden="true">✗</i>Response</li>
+            <li class="s unk" style="--i:5"><i aria-hidden="true">?</i>Correlation</li>
           </ol>
           <div class="ba-res bad"><span aria-hidden="true">✗</span><div><b>Failed at Response</b><small>HTTP 500 · EL1003</small></div></div>
           <p class="ba-cap">The request left the browser. The server's response says it wasn't recorded.</p>
@@ -349,28 +331,25 @@
       <p class="legal">Illustrative example.</p>
     </div>
 
-    <div class="blk">
-      <h3 class="blk-h">The life of one event</h3>
-      <p class="sub" style="margin-top:8px">Six stages, each marked observed, failed or unknown. Select a stage to see what Eventloupe looks at there.</p>
-      <ol class="pipe" role="list" aria-label="Example pipeline for one event, from application to correlation">
-        <li style="--i:0"><button type="button" class="stg" data-i="0" aria-current="true" aria-controls="life-detail"><span class="dot" aria-hidden="true">✓</span><span class="t">Application</span><span class="d">dataLayer push seen</span></button></li>
-        <li style="--i:1"><button type="button" class="stg" data-i="1" aria-current="false" aria-controls="life-detail"><span class="dot" aria-hidden="true">✓</span><span class="t">Tag Manager</span><span class="d">container loaded</span></button></li>
-        <li style="--i:2"><button type="button" class="stg" data-i="2" aria-current="false" aria-controls="life-detail"><span class="dot" aria-hidden="true">✓</span><span class="t">SDK invocation</span><span class="d">gtag() called</span></button></li>
-        <li style="--i:3"><button type="button" class="stg" data-i="3" aria-current="false" aria-controls="life-detail"><span class="dot" aria-hidden="true">✓</span><span class="t">Network</span><span class="d">request sent</span></button></li>
-        <li style="--i:4" class="bad"><button type="button" class="stg" data-i="4" aria-current="false" aria-controls="life-detail"><span class="dot" aria-hidden="true">✗</span><span class="t">Response</span><span class="d">500 · failed</span></button></li>
-        <li style="--i:5" class="unk"><button type="button" class="stg" data-i="5" aria-current="false" aria-controls="life-detail"><span class="dot" aria-hidden="true">?</span><span class="t">Correlation</span><span class="d">unknown</span></button></li>
-      </ol>
-      <p class="sr-only" role="status" id="life-say"></p>
-      <div class="life-detail" id="life-detail">
-        <p class="ld-k">Stage 1 of 6 · Application</p>
-        <dl>
-          <dt>What it looks at</dt><dd>The page's own call: a <code>dataLayer.push</code>, or an SDK call like <code>gtag()</code> or <code>fbq()</code>.</dd>
-          <dt>Evidence recorded</dt><dd>The event name and payload exactly as the page produced them.</dd>
-          <dt>Unknown when</dt><dd>The call ran before Eventloupe could hook it. The network stage may still catch the request.</dd>
-        </dl>
+    <div class="blk blk-fold">
+      <details class="fold"><summary>Standard debuggers vs. Eventloupe, row by row</summary>
+      <div class="tbl-wrap" role="region" aria-label="Comparison table (scrolls sideways on small screens)" tabindex="0">
+        <table class="matrix">
+          <caption class="sr-only">A typical pass/fail debugger compared with Eventloupe</caption>
+          <thead><tr><th scope="col"><span class="sr-only">Capability</span></th><th scope="col">Standard debuggers</th><th scope="col" class="ev">Eventloupe</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Status model</th><td>Success or fail. Two states.</td><td>Observed, failed or unknown. Three states.</td></tr>
+            <tr><th scope="row">What it relies on</th><td>Typically the SDK's own report of what it did</td><td>The network request and its response, alongside the SDK call</td></tr>
+            <tr><th scope="row">Missing evidence</th><td>Has to be shown as a pass or a fail</td><td>Shown as unknown, never guessed</td></tr>
+            <tr><th scope="row">Delivery</th><td>Not verified</td><td>Response status recorded where the browser exposes it</td></tr>
+            <tr><th scope="row">The report</th><td>A pass/fail badge</td><td>An evidence trail: six stages, each marked observed, failed or unknown</td></tr>
+          </tbody>
+        </table>
       </div>
-      <p class="legal">Illustrative pipeline for a single event. Failed stages are flagged where the evidence is, and unknown stages stay unknown.</p>
+      <p class="legal">"Standard debuggers" describes the common pass/fail approach, not any specific product.</p>
+      </details>
     </div>
+
   </div>
 </section>
 
@@ -378,23 +357,23 @@
 <section class="paper" id="who" aria-labelledby="h-who">
   <div class="wrap">
     <div class="trace" aria-hidden="true"><i class="ok"></i></div>
-    <p class="eyebrow">Who it's for</p>
-    <h2 id="h-who">Built for the precision-obsessed.</h2>
+    <p class="eyebrow">When you need it</p>
+    <h2 id="h-who">Three moments it settles.</h2>
     <div class="personas">
       <article class="persona">
-        <p class="role">01 · Developers</p>
-        <h3>Verify dataLayer pushes and SDK invocations without guessing.</h3>
-        <p class="ptag">dataLayer.push → gtag() → request</p>
+        <p class="role">A conversion is missing</p>
+        <h3>Find the stage where it stopped: the push, the tag, the request or the response.</h3>
+        <p class="ptag">six stages · observed, failed or unknown</p>
       </article>
       <article class="persona">
-        <p class="role">02 · Analysts</p>
-        <h3>Cross-reference GA4 and Meta Pixel events in one unified timeline.</h3>
-        <p class="ptag">GA4 + Meta Pixel · one timeline</p>
+        <p class="role">A conversion is doubled</p>
+        <h3>See every copy of the event, which tag fired it and what triggered it.</h3>
+        <p class="ptag">duplicates flagged · GA4, Meta and more in one timeline</p>
       </article>
       <article class="persona">
-        <p class="role">03 · Marketers</p>
-        <h3>Confirm conversion requests were sent and got a response, not just fired.</h3>
-        <p class="ptag">request sent · response observed</p>
+        <p class="role">A client asks for proof</p>
+        <h3>Export the session as an HTML report, JSON or CSV, with a code and a fix for each finding.</h3>
+        <p class="ptag">HTML report · JSON · CSV</p>
       </article>
     </div>
   </div>
@@ -489,6 +468,28 @@
         <img src="img/consent.webp" width="1280" height="800" alt="Eventloupe consent mode timeline showing consent signals alongside tracking events" loading="lazy" decoding="async"></div>
       <figcaption>Consent signals on the same timeline as the events they affect.</figcaption>
     </figure>
+      <div class="blk life-blk">
+      <h3 class="blk-h">The life of one event</h3>
+      <p class="sub" style="margin-top:8px">Six stages, each marked observed, failed or unknown. Select a stage to see what Eventloupe looks at there.</p>
+      <ol class="pipe" role="list" aria-label="Example pipeline for one event, from application to correlation">
+        <li style="--i:0"><button type="button" class="stg" data-i="0" aria-current="true" aria-controls="life-detail"><span class="dot" aria-hidden="true">✓</span><span class="t">Application</span><span class="d">dataLayer push seen</span></button></li>
+        <li style="--i:1"><button type="button" class="stg" data-i="1" aria-current="false" aria-controls="life-detail"><span class="dot" aria-hidden="true">✓</span><span class="t">Tag Manager</span><span class="d">container loaded</span></button></li>
+        <li style="--i:2"><button type="button" class="stg" data-i="2" aria-current="false" aria-controls="life-detail"><span class="dot" aria-hidden="true">✓</span><span class="t">SDK invocation</span><span class="d">gtag() called</span></button></li>
+        <li style="--i:3"><button type="button" class="stg" data-i="3" aria-current="false" aria-controls="life-detail"><span class="dot" aria-hidden="true">✓</span><span class="t">Network</span><span class="d">request sent</span></button></li>
+        <li style="--i:4" class="bad"><button type="button" class="stg" data-i="4" aria-current="false" aria-controls="life-detail"><span class="dot" aria-hidden="true">✗</span><span class="t">Response</span><span class="d">500 · failed</span></button></li>
+        <li style="--i:5" class="unk"><button type="button" class="stg" data-i="5" aria-current="false" aria-controls="life-detail"><span class="dot" aria-hidden="true">?</span><span class="t">Correlation</span><span class="d">unknown</span></button></li>
+      </ol>
+      <p class="sr-only" role="status" id="life-say"></p>
+      <div class="life-detail" id="life-detail">
+        <p class="ld-k">Stage 1 of 6 · Application</p>
+        <dl>
+          <dt>What it looks at</dt><dd>The page's own call: a <code>dataLayer.push</code>, or an SDK call like <code>gtag()</code> or <code>fbq()</code>.</dd>
+          <dt>Evidence recorded</dt><dd>The event name and payload exactly as the page produced them.</dd>
+          <dt>Unknown when</dt><dd>The call ran before Eventloupe could hook it. The network stage may still catch the request.</dd>
+        </dl>
+      </div>
+      <p class="legal">Illustrative pipeline for a single event. Failed stages are flagged where the evidence is, and unknown stages stay unknown.</p>
+    </div>
   </div>
 </section>
 
@@ -522,8 +523,8 @@
       <div class="fact"><div class="k">Data lives</div><div class="v">In your browser</div></div>
     </div>
     <figure class="vis" id="perimeter">
-      <div class="svgwrap" role="region" tabindex="0" aria-label="Diagram of events staying inside the browser (scrolls sideways on small screens)"><svg class="anim" viewBox="0 0 760 300" role="img" aria-label="Events stay inside the browser: nothing crosses the boundary to servers, accounts or analytics" focusable="false"><text x="40" y="52" class="v-cap">YOUR BROWSER</text><rect x="20" y="20" width="470" height="262" rx="22" class="p-wall"/><g><rect x="40" y="90" width="110" height="56" rx="10" class="v-box"/><text x="95" y="123" text-anchor="middle" class="v-t">The page</text></g><g><rect x="200" y="90" width="130" height="56" rx="10" class="p-ext"/><text x="265" y="123" text-anchor="middle" class="p-ext-t">Eventloupe</text></g><g><rect x="200" y="196" width="130" height="56" rx="10" class="v-box"/><text x="265" y="220" text-anchor="middle" class="v-t">chrome.storage</text><text x="265" y="238" text-anchor="middle" class="v-s2">stays on this device</text></g><path d="M150 118 H198" class="v-wire solid" marker-end="url(#vArr2)"/><path d="M265 146 V194" class="v-wire solid" marker-end="url(#vArr2)"/><path d="M330 118 H486" class="v-wire"/><g class="p-x"><path d="M484 108 L500 128 M500 108 L484 128" stroke-linecap="round"/></g><g><rect x="560" y="60" width="190" height="48" rx="10" class="p-out"/><text x="578" y="90" class="v-t dim">Our servers <tspan class="v-s2">· none</tspan></text></g><path d="M504 84 H556" class="p-gap"/><g><rect x="560" y="128" width="190" height="48" rx="10" class="p-out"/><text x="578" y="158" class="v-t dim">Accounts <tspan class="v-s2">· none</tspan></text></g><path d="M504 152 H556" class="p-gap"/><g><rect x="560" y="196" width="190" height="48" rx="10" class="p-out"/><text x="578" y="226" class="v-t dim">Analytics <tspan class="v-s2">· none</tspan></text></g><path d="M504 220 H556" class="p-gap"/><defs><marker id="vArr2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L8 4L0 8z" class="v-arrow"/></marker></defs><circle r="4.5" class="v-pk" opacity="0"><animateMotion dur="4.5s" begin="0s" repeatCount="indefinite" path="M150 118 H198" keyPoints="0;1;1" keyTimes="0;0.2;1" calcMode="linear"/><animate attributeName="opacity" dur="4.5s" begin="0s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;0.03;0.18;0.2;1"/></circle><circle r="4.5" class="v-pk" opacity="0"><animateMotion dur="4.5s" begin="0s" repeatCount="indefinite" path="M265 146 V194" keyPoints="0;0;1;1" keyTimes="0;0.22;0.42;1" calcMode="linear"/><animate attributeName="opacity" dur="4.5s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.22;0.24;0.4;0.42;1"/></circle><circle r="4.5" class="v-pk warn" opacity="0"><animateMotion dur="4.5s" begin="0s" repeatCount="indefinite" path="M330 118 H478" keyPoints="0;0;1;1" keyTimes="0;0.5;0.78;1" calcMode="linear"/><animate attributeName="opacity" dur="4.5s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.5;0.53;0.76;0.8;1"/></circle><g class="p-x flash" opacity="0"><path d="M484 108 L500 128 M500 108 L484 128" stroke-linecap="round"/><animate attributeName="opacity" dur="4.5s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.77;0.8;0.9;0.95;1"/></g></svg></div>
-      <figcaption>Eventloupe watches the page's own requests and keeps what it sees inside your browser. It sends nothing of its own. <button type="button" class="pmini" data-pause aria-pressed="false">Pause motion</button></figcaption>
+      <div class="svgwrap" role="region" tabindex="0" aria-label="Diagram of events staying inside the browser (scrolls sideways on small screens)"><svg class="anim" viewBox="0 0 760 300" role="img" aria-label="Events stay inside the browser: nothing crosses the boundary to servers, accounts or analytics" focusable="false"><text x="40" y="52" class="v-cap">YOUR BROWSER</text><rect x="20" y="20" width="470" height="262" rx="22" class="p-wall"/><g><rect x="40" y="90" width="110" height="56" rx="10" class="v-box"/><text x="95" y="123" text-anchor="middle" class="v-t">The page</text></g><g><rect x="200" y="90" width="130" height="56" rx="10" class="p-ext"/><text x="265" y="123" text-anchor="middle" class="p-ext-t">Eventloupe</text></g><g><rect x="200" y="196" width="130" height="56" rx="10" class="v-box"/><text x="265" y="220" text-anchor="middle" class="v-t">chrome.storage</text><text x="265" y="238" text-anchor="middle" class="v-s2">stays on this device</text></g><path d="M150 118 H198" class="v-wire solid" marker-end="url(#vArr2)"/><path d="M265 146 V194" class="v-wire solid" marker-end="url(#vArr2)"/><path d="M330 118 H486" class="v-wire"/><g class="p-x"><path d="M484 108 L500 128 M500 108 L484 128" stroke-linecap="round"/></g><g><rect x="560" y="60" width="190" height="48" rx="10" class="p-out"/><text x="578" y="90" class="v-t dim">Our servers <tspan class="v-s2">· none</tspan></text></g><path d="M504 84 H556" class="p-gap"/><g><rect x="560" y="128" width="190" height="48" rx="10" class="p-out"/><text x="578" y="158" class="v-t dim">Accounts <tspan class="v-s2">· none</tspan></text></g><path d="M504 152 H556" class="p-gap"/><g><rect x="560" y="196" width="190" height="48" rx="10" class="p-out"/><text x="578" y="226" class="v-t dim">Analytics <tspan class="v-s2">· none</tspan></text></g><path d="M504 220 H556" class="p-gap"/><defs><marker id="vArr2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L8 4L0 8z" class="v-arrow"/></marker></defs><circle r="4.5" class="v-pk" opacity="0"></circle><circle r="4.5" class="v-pk" opacity="0"></circle><circle r="4.5" class="v-pk warn" opacity="0"></circle><g class="p-x flash" opacity="0"><path d="M484 108 L500 128 M500 108 L484 128" stroke-linecap="round"/></g></svg></div>
+      <figcaption>Eventloupe watches the page's own requests and keeps what it sees inside your browser. It sends nothing of its own.</figcaption>
     </figure>
     <p class="note">This site is held to the same standard. Its fonts, scripts and images all come from eventloupe.com, and analytics (Google Tag Manager) loads only if you accept it. Decline, and nothing from Google loads at all. Open Eventloupe on this page and check.</p>
     <a class="link-arrow" href="privacy.html">Read the full privacy policy →</a>
@@ -553,11 +554,11 @@
     <div>
     <div class="trace" aria-hidden="true"><i class="ok"></i></div>
     <p class="eyebrow">Launching soon</p>
-    <h2 id="h-close">Coming to the Chrome Web Store.</h2>
-    <p class="sub">Eventloupe is built for developers, analysts and marketers who need to know what a page really sent. Questions or feedback are welcome.</p>
+    <h2 id="h-close">Docs now. Install soon.</h2>
+    <p class="sub">What happened, how do we know, and what should be fixed: Eventloupe answers all three for every event. The extension is launching soon on the Chrome Web Store, and the documentation is open now.</p>
     <div class="cta-row">
-      <a class="pill primary" href="https://github.com/sibingop-dev/eventloupe-privacy/issues" rel="noopener">Share feedback on GitHub</a>
-      <a class="pill" href="privacy.html">Privacy policy</a>
+      <a class="pill primary" href="docs.html">Read the docs</a>
+      <a class="pill" href="https://github.com/sibingop-dev/eventloupe-privacy/issues" rel="noopener">Share feedback on GitHub</a>
     </div>
     </div>
     <div class="resolve-col">
