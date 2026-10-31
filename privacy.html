@@ -122,7 +122,7 @@
       Eventloupe
     </div>
     <h1>Privacy Policy</h1>
-    <p class="subtitle">Last updated: October 2026</p>
+    <p class="subtitle">Last updated: 31 October 2026</p>
   </header>
 
   <div class="layout">
@@ -193,7 +193,8 @@
 
   <section id="reads">
   <h2><span class="n">3</span>What the extension reads on a page</h2>
-  <p>To show you tracking events, Eventloupe runs a small script on web pages that observes calls to known analytics APIs (such as <code>dataLayer.push</code>, <code>gtag</code>, <code>fbq</code>) and requests to known tracking endpoints, including the request body where the event details are sent. Those events may contain identifiers that the site itself sends to its analytics vendors. Eventloupe does not send them anywhere: they are shown in the DevTools panel, kept temporarily in your browser as described below, and included in an export or report only when you create one yourself.</p>
+  <p>To show you tracking events, Eventloupe runs a small script on web pages that observes calls to known analytics APIs (such as <code>dataLayer.push</code>, <code>gtag</code>, <code>fbq</code>) and requests to known tracking endpoints, including the request body where the event details are sent. Those events may contain identifiers that the site itself sends to its analytics vendors. Eventloupe does not send them anywhere: they are shown in the DevTools panel, kept temporarily in your browser as described below, and included in an export or report only when you create one yourself. Eventloupe also records the address (URL) of the page each event came from, so events can be grouped by page in the panel and in reports.</p>
+  <p>Some tools pass values that identify a person. Eventloupe does not keep them whole: for Microsoft Clarity's <code>identify()</code> it shows only the first two characters and the length of each value, and for the Amazon Ads tag's <code>setUserData()</code> (which carries an e-mail address and phone number) it records nothing at all, only that the event happened.</p>
   </section>
 
   <section id="storage">
@@ -209,13 +210,23 @@
       Used to restore the event feed if Chrome's service worker restarts.
     </li>
     <li>
-      <strong>chrome.storage.local</strong> — used only to persist your personal
-      alert rule configurations (if you create any). This data never leaves your device.
+      <strong>IndexedDB</strong> (database <code>eventloupeRecovery</code>) — a recovery copy of an
+      open audit, so the panel can pick up where it was if Chrome restarts the extension's background
+      worker or the browser: up to 1,000 captured events per tab (without their raw request payloads)
+      and the website's hostname. This is on disk, inside your browser profile. It is deleted when you
+      press Clear in the panel and when you close the tab, and a copy more than 24 hours old is discarded
+      the next time the background worker starts.
+    </li>
+    <li>
+      <strong>chrome.storage.local</strong> — used only to keep your own settings: the alert rules you
+      create and your Marketer / Advanced view choice. No captured events go here.
     </li>
   </ul>
   <p>
-    No captured tracking data is ever written to disk beyond Chrome's own storage
-    mechanisms, and none of it is ever sent outside your browser.
+    Captured tracking data is kept in the three places above and nowhere else, and none of it is ever
+    sent outside your browser. Because it can include identifiers a site sent to its analytics vendors,
+    press Clear (or close the tab) when you finish auditing a site you want no trace of. Removing the
+    extension removes everything it stored.
   </p>
   </section>
 
@@ -236,15 +247,11 @@
       </tr>
       <tr>
         <td><code>scripting</code></td>
-        <td>Required to inject a small JavaScript hook into the inspected page's main context to intercept dataLayer pushes, gtag() calls, fbq() calls, and other JS API-level tracking events.</td>
-      </tr>
-      <tr>
-        <td><code>tabs</code></td>
-        <td>Used to read the current tab's URL so events can be correctly grouped by page in the Eventloupe panel and audit reports.</td>
+        <td>Required to inject a small JavaScript hook into the inspected page's main context to intercept dataLayer pushes and the tracking tools' own calls (gtag(), fbq(), ttq, snaptr, pintrk, lintrk, clarity(), amzn()), which carry more detail than the network request alone.</td>
       </tr>
       <tr>
         <td><code>storage</code></td>
-        <td>Used to save your alert rule preferences locally in your browser (see above).</td>
+        <td>Used for the temporary and recovery copies of captured events and for your own settings, exactly as described in section 4.</td>
       </tr>
     </tbody>
   </table>

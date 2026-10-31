@@ -5,7 +5,7 @@
 Status: launching soon on the Chrome Web Store.
 
 ## Key facts
-- Covers 21 sources in one DevTools panel: dataLayer, Google Analytics 4, Google Tag Manager, Meta Pixel, TikTok, Google Ads, Snapchat, Pinterest, LinkedIn, Reddit, Segment, Adobe Analytics, Amplitude, Mixpanel, Microsoft UET, X, Criteo, Floodlight/CM360, Taboola, Outbrain and Quora.
+- Covers 23 sources in one DevTools panel: dataLayer, Google Analytics 4, Google Tag Manager, Meta Pixel, TikTok, Google Ads, Snapchat, Pinterest, LinkedIn, Reddit, Segment, Adobe Analytics, Amplitude, Mixpanel, Microsoft UET, Microsoft Clarity, the Amazon Ads tag, X, Criteo, Floodlight/CM360, Taboola, Outbrain and Quora.
 - Three evidence states, never two: observed (for example HTTP 204), failed (for example HTTP 500) and unknown (not observable, recorded as null instead of guessed).
 - Six pipeline stages: Application, Tag Manager, SDK invocation, Network, Response, Correlation.
 - Diagnostics are rule-based with permanent codes from EL1000 to EL9999. The same input always gives the same result, and a code never fires on missing evidence alone.
