@@ -49,7 +49,7 @@
   var css = '#el-consent{position:fixed;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:90;max-width:760px;margin-inline:auto;' +
     'background:#141821;color:#e8e6e1;border:1px solid #3a4355;border-radius:14px;padding:18px 20px;box-shadow:0 20px 50px rgba(0,0,0,.55);' +
     'font:400 14.5px/1.55 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center}' +
-    '#el-consent[hidden]{display:none}#el-consent p{margin:0;flex:1 1 320px;color:#d3d7e0}#el-consent a{color:#fff;text-underline-offset:3px}' +
+    '#el-consent{opacity:0;transform:translateY(12px);transition:opacity .22s ease-out,transform .26s cubic-bezier(.23,1,.32,1)}#el-consent.in{opacity:1;transform:none}#el-consent[hidden]{display:none}@media(prefers-reduced-motion:reduce){#el-consent{transition:none;transform:none}}#el-consent p{margin:0;flex:1 1 320px;color:#d3d7e0}#el-consent a{color:#fff;text-underline-offset:3px}' +
     '#el-consent a{display:inline-block;padding-block:10px;margin-block:-10px}#el-consent .b{display:flex;gap:10px;flex-wrap:wrap}' +
     '#el-consent button{min-height:44px;padding:0 20px;border-radius:999px;font:600 14.5px/1 "IBM Plex Sans",system-ui,sans-serif;cursor:pointer;border:1.5px solid #6b7587;background:transparent;color:#e8e6e1}' +
     '#el-consent button:hover{border-color:#fff}#el-consent button.y{background:#d13b20;border-color:#d13b20;color:#fff}#el-consent button.y:hover{background:#fff;border-color:#fff;color:#0d1016}' +
@@ -69,7 +69,7 @@
       var a = e.target && e.target.getAttribute && e.target.getAttribute('data-a')
       if (!a) return
       if (a === 'y') accept(); else decline()
-      bar.hidden = true
+      bar.classList.remove('in'); setTimeout(function () { bar.hidden = true }, 200)
     })
     d.body.appendChild(bar)
     return bar
@@ -81,6 +81,7 @@
       ? 'Your analytics choice is <strong>' + (cur === 'granted' ? 'accepted' : 'declined') + '</strong>. You can change it here. <a href="privacy.html#website">How this site uses analytics</a>.'
       : '<span class="el-lead">This site can use Google Tag Manager for page analytics. </span><strong>Nothing from Google loads until you accept.</strong> <a href="privacy.html#website">Details</a>'
     b.hidden = false
+    setTimeout(function () { b.classList.add('in') }, 30)
   }
 
   function ready() {

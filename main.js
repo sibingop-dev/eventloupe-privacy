@@ -68,7 +68,7 @@
   if ('ResizeObserver' in window) new ResizeObserver(fit).observe(stage)
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit)
 
-  var x = W * 0.5, y = H * 0.5, tx = x, ty = y
+  var x = W * 0.5, y = H * 0.5, tx = x, ty = y, vx = 0, vy = 0
   var pointerIn = false, lastPointer = 0, all = false
   var shown = { ok: -1, bad: -1, unk: -1 }
 
@@ -107,8 +107,14 @@
     pointerIn = true; lastPointer = performance.now()
   }
   stage.addEventListener('pointermove', move)
-  stage.addEventListener('pointerdown', move)
-  stage.addEventListener('pointerleave', function () { pointerIn = false; lastPointer = performance.now() })
+  stage.addEventListener('pointerdown', function (e) {
+    move(e)
+    stage.classList.add('press')
+    if (e.pointerType === 'touch') { x = tx; y = ty; vx = vy = 0 }     // a finger shouldn't wait for the lens
+  })
+  var release = function () { stage.classList.remove('press') }
+  stage.addEventListener('pointerup', release); stage.addEventListener('pointercancel', release)
+  stage.addEventListener('pointerleave', function () { pointerIn = false; lastPointer = performance.now(); release() })
 
   /* "Show every event" doubles as the no-pointer, reduced-motion and screen-reader path */
   function setAll(on) {
@@ -139,14 +145,17 @@
         tx = W * 0.5 + 200 * Math.sin(t * 0.52)
         ty = H * 0.5 + 130 * Math.sin(t * 0.81 + 1.2)
       }
-      var k = 1 - Math.pow(0.0009, dt)
-      x += (tx - x) * k; y += (ty - y) * k
+      // a slightly under-damped spring: the lens has weight and settles with a small, quick overshoot
+      var ST = 190, DM = 2 * Math.sqrt(ST) * 0.86
+      vx += ((tx - x) * ST - vx * DM) * dt; vy += ((ty - y) * ST - vy * DM) * dt
+      x += vx * dt; y += vy * dt
+      x = Math.max(-20, Math.min(W + 20, x)); y = Math.max(-20, Math.min(H + 20, y))
       paint(); count()
     }
     raf = requestAnimationFrame(frame)
   }
-  function start() { if (!running) { running = true; prev = performance.now(); raf = requestAnimationFrame(frame) } }
-  function stop() { running = false; cancelAnimationFrame(raf) }
+  function start() { if (!running) { running = true; stage.classList.add('live'); prev = performance.now(); raf = requestAnimationFrame(frame) } }
+  function stop() { running = false; stage.classList.remove('live'); cancelAnimationFrame(raf) }
 
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (es) { inView = es[0].isIntersecting; inView && !document.hidden ? start() : stop() }, { threshold: 0.05 }).observe(stage)
@@ -188,7 +197,7 @@
     var COL = { brand: '#f4694e', ok: '#3fb67a', bad: '#ff4d38', unk: '#8b95a7' }
 
     var size = function () {
-      var dpr = Math.min(window.devicePixelRatio || 1, 1.5)
+      var dpr = 1
       w = hero.clientWidth; h = hero.clientHeight
       cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr)
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
@@ -410,14 +419,16 @@
   var detail = document.getElementById('life-detail')
   var stg = Array.prototype.slice.call(document.querySelectorAll('.pipe .stg'))
   if (detail && stg.length) {
-    var show = function (i) {
+    var show = function (i, instant) {
       var s = STAGES[i]
       stg.forEach(function (b, n) { b.setAttribute('aria-current', n === i ? 'true' : 'false') })
       var say = document.getElementById('life-say'); if (say) say.textContent = 'Stage ' + (i + 1) + ' of 6: ' + s[0]
       detail.innerHTML = '<p class="ld-k">Stage ' + (i + 1) + ' of 6 · ' + s[0] + '</p><dl>' +
         '<dt>What it looks at</dt><dd>' + s[1] + '</dd><dt>Evidence recorded</dt><dd>' + s[2] + '</dd><dt>Unknown when</dt><dd>' + s[3] + '</dd></dl>'
+      detail.classList.remove('sw')
+      if (!instant && !reduce) { void detail.offsetWidth; detail.classList.add('sw') }
     }
-    stg.forEach(function (b) { b.addEventListener('click', function () { show(+b.getAttribute('data-i')) }) })
+    stg.forEach(function (b) { b.addEventListener('click', function (e) { show(+b.getAttribute('data-i'), e.detail === 0) }) })
   }
 
   /* ── before / after plays once when scrolled into view ── */
@@ -469,4 +480,162 @@
     box.addEventListener('pointerleave', function () { box.classList.remove('lens-on') })
     box.addEventListener('pointercancel', function () { box.classList.remove('lens-on') })
   } catch (err) { /* decorative: never block the page */ }
+})()
+
+/* ═════════ scenes: the read-along statement, the event journey, copyable codes ═════════
+   Every scene paints its state once, synchronously, so nothing waits on animation frames.
+   Reduced motion, no script, print and a stalled frame loop all show the finished state. */
+;(function () {
+  'use strict'
+  try {
+  var root = document.documentElement
+  var mqR = window.matchMedia('(prefers-reduced-motion: reduce)')
+  var reduce = mqR.matches
+  var mqPin = window.matchMedia('(min-width: 961px) and (min-height: 560px)')
+  var clamp = function (v, a, b) { return Math.max(a, Math.min(b, v)) }
+  var ticking = false, subs = []
+  var run = function () { subs.forEach(function (f) { f() }) }
+  var schedule = function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; run() }) } }
+  window.addEventListener('scroll', schedule, { passive: true })
+  window.addEventListener('resize', schedule)
+
+  /* nav gains a hairline once the page has moved */
+  var nav = document.querySelector('.nav')
+  if (nav) subs.push(function () { nav.classList.toggle('scrolled', window.scrollY > 8) })
+
+  /* ── statement: words light up as the section is read (pinned for a beat on desktop) ── */
+  var st = document.getElementById('statement')
+  var words = st ? Array.prototype.slice.call(st.querySelectorAll('.sw')) : []
+  if (st && words.length && !reduce) {
+    var lastN = -1
+    var paintWords = function () {
+      var r = st.getBoundingClientRect(), vh = window.innerHeight, p
+      if (st.classList.contains('s-pin')) p = clamp(-r.top / Math.max(1, r.height - vh) / 0.75, 0, 1)
+      else p = clamp((vh * 0.82 - r.top) / (r.height * 0.9 + vh * 0.1), 0, 1)
+      var n = Math.round(p * words.length)
+      if (n === lastN) return
+      lastN = n
+      words.forEach(function (w, i) { w.classList.toggle('lit', i < n) })
+      st.classList.toggle('done', n === words.length)
+    }
+    var setStatement = function () {
+      st.classList.toggle('s-pin', mqPin.matches)
+      root.classList.add('s-js'); lastN = -1; paintWords()
+    }
+    subs.push(paintWords); setStatement()
+    if (mqPin.addEventListener) mqPin.addEventListener('change', setStatement)
+  }
+
+  /* ── journey: one event, six stages. Desktop: scroll drives it with a dwell at the failure.
+        Touch layouts: the same story plays once, on a timer, when it enters view. ── */
+  var jr = document.getElementById('journey')
+  if (jr) {
+    var track = jr.querySelector('.j-track'), stick = jr.querySelector('.j-stick')
+    var rail = jr.querySelector('.j-rail'), dot = jr.querySelector('.j-dot'), fill = jr.querySelector('.j-fill'), cap = jr.querySelector('.j-cap')
+    var nodes = Array.prototype.slice.call(jr.querySelectorAll('.j-n'))
+    var CAPS = ['Application: the push is seen.', 'Tag Manager: the container is loaded.', 'SDK invocation: gtag() is called.', 'Network: the request is sent.', 'Response: HTTP 500, failed.', 'Correlation: unknown. Nothing is inferred.']
+    var scrubbing = null, io = null, timers = [], lastKey = ''
+    var clearTimers = function () { timers.forEach(clearTimeout); timers = [] }
+    var finish = function () {
+      clearTimers(); if (io) { io.disconnect(); io = null }
+      if (scrubbing) { subs.splice(subs.indexOf(scrubbing), 1); scrubbing = null }
+      jr.classList.remove('j-live', 'j-pin', 'hit', 's3', 'v', 'x')
+      dot.style.transform = ''; fill.style.transform = ''
+      nodes.forEach(function (n) { n.classList.remove('on') })
+    }
+    /* u: how far along the rail the dot is, in stage units 0..5 */
+    var show = function (u, verdict, extra) {
+      var W = rail.clientWidth, x = (0.5 + u) / 6 * W
+      dot.style.transform = 'translate3d(' + (x - dot.offsetWidth / 2).toFixed(1) + 'px,0,0)'
+      fill.style.transform = 'scaleX(' + clamp((x - W / 12) / (W * 5 / 6), 0, 1).toFixed(3) + ')'
+      var lit = Math.floor(u + 0.02), ex = extra === undefined ? lit >= 4 : extra, key = lit + ':' + verdict + ':' + ex
+      if (key === lastKey) return
+      var wasBad = lastKey.charAt(0) >= '4' && lastKey !== ''
+      lastKey = key
+      nodes.forEach(function (n, i) { n.classList.toggle('on', i <= lit) })
+      jr.classList.toggle('s3', lit >= 2)
+      var failed = lit >= 4
+      dot.classList.toggle('hit', failed); dot.textContent = failed ? 'purchase · 500' : 'purchase'
+      jr.classList.toggle('hit', failed && !verdict)
+      if (cap) cap.textContent = 'Stage ' + (lit + 1) + ' of 6 · ' + CAPS[lit]
+      jr.classList.toggle('v', verdict); jr.classList.toggle('x', ex)
+      if (failed && !wasBad && !reduce) { dot.style.animation = 'none'; void dot.offsetWidth; dot.style.animation = '' }
+    }
+    var scrub = function () {
+      var r = track.getBoundingClientRect(), span = track.offsetHeight - stick.offsetHeight
+      var p = span > 0 ? clamp((96 - r.top) / span, 0, 1) : 1
+      // 0-.46 travel to Response, .46-.58 dwell (the code appears at .52), .58-.76 on to Correlation, then the verdict holds
+      var u = p < 0.46 ? 4 * p / 0.46 : p < 0.58 ? 4 : 4 + clamp((p - 0.58) / 0.18, 0, 1)
+      show(u, p > 0.8, p > 0.52)
+    }
+    var play = function () {
+      var u = 0; show(0, false)
+      var steps = [1, 2, 3, 4, 5]
+      steps.forEach(function (n, i) { timers.push(setTimeout(function () { show(n, false) }, 520 * (i + 1) + (n >= 5 ? 380 : 0))) })
+      timers.push(setTimeout(function () { show(5, true) }, 520 * 5 + 380 + 520))
+    }
+    var setup = function () {
+      finish(); lastKey = ''
+      if (reduce || !('IntersectionObserver' in window)) return                 // static, finished state
+      jr.classList.add('j-live')
+      if (mqPin.matches) { jr.classList.add('j-pin'); scrubbing = scrub; subs.push(scrub); scrub() }
+      else {
+        show(0, false)
+        io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { io.disconnect(); io = null; play() } }, { threshold: 0.35 })
+        io.observe(jr)
+      }
+    }
+    setup()
+    if (mqPin.addEventListener) mqPin.addEventListener('change', setup)
+  }
+
+  /* ── panel tour: the real screenshot, one region at a time (desktop); plain figure + list elsewhere ── */
+  var tr = document.getElementById('tour')
+  if (tr) {
+    var tTrack = tr.querySelector('.t-track'), tStick = tr.querySelector('.t-stick'), tView = tr.querySelector('.t-view'), tFrame = tr.querySelector('.t-frame')
+    var tSteps = Array.prototype.slice.call(tr.querySelectorAll('.t-steps li'))
+    var REG = [[0, 0, 1280, 800], [0, 135, 400, 380], [210, 135, 730, 240], [940, 135, 340, 430]]   // image px: full, health, feed, detail
+    var tCur = -1, tScrub = null
+    var aim = function (i) {
+      var g = REG[i], vw = tView.clientWidth, vh = tView.clientHeight, k = vw / 1280
+      var sc = Math.min(1.9, Math.min(1280 / g[2], 800 / g[3]))
+      var tx = clamp(vw / 2 - (g[0] + g[2] / 2) * k * sc, vw - vw * sc, 0)
+      var ty = clamp(vh / 2 - (g[1] + g[3] / 2) * k * sc, vh - vh * sc, 0)
+      tFrame.style.transform = 'translate(' + tx.toFixed(1) + 'px,' + ty.toFixed(1) + 'px) scale(' + sc.toFixed(3) + ')'
+    }
+    var tPaint = function () {
+      var r = tTrack.getBoundingClientRect(), span = tTrack.offsetHeight - tStick.offsetHeight
+      var p = span > 0 ? clamp((96 - r.top) / span, 0, 1) : 0
+      var i = p < 0.1 ? 0 : p < 0.38 ? 1 : p < 0.66 ? 2 : 3
+      if (i === tCur) return
+      tCur = i; aim(i)
+      tSteps.forEach(function (li, n) { li.classList.toggle('on', n === i); if (n === i) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current') })
+    }
+    var tSetup = function () {
+      if (tScrub) { subs.splice(subs.indexOf(tScrub), 1); tScrub = null }
+      tr.classList.remove('t-live'); tFrame.style.transform = ''; tCur = -1
+      tSteps.forEach(function (li, n) { li.classList.toggle('on', n === 0); li.removeAttribute('aria-current') })
+      if (reduce || !mqPin.matches) return
+      tr.classList.add('t-live'); tScrub = tPaint; subs.push(tPaint); tPaint()
+    }
+    tSetup()
+    if (mqPin.addEventListener) mqPin.addEventListener('change', tSetup)
+    window.addEventListener('resize', function () { if (tr.classList.contains('t-live')) { tCur = -1; tPaint() } })
+  }
+
+  /* ── EL codes: click to copy, announced politely ── */
+  var say = document.getElementById('copy-say')
+  Array.prototype.forEach.call(document.querySelectorAll('button.cc-code'), function (b) {
+    b.addEventListener('click', function () {
+      var code = b.getAttribute('data-copy')
+      var done = function (ok) {
+        if (say) say.textContent = ok ? code + ' copied' : 'Copy not available. The code is ' + code
+        if (ok) { b.classList.add('copied'); setTimeout(function () { b.classList.remove('copied') }, 1400) }
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(code).then(function () { done(true) }, function () { done(false) })
+      else done(false)
+    })
+  })
+  run()
+  } catch (err) { document.documentElement.classList.remove('s-js'); var j = document.getElementById('journey'); if (j) j.classList.remove('j-live', 'j-pin') }
 })()

@@ -103,7 +103,7 @@
      "name": "Which platforms does Eventloupe support?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Google Analytics 4, Google Tag Manager, Meta Pixel, TikTok, Google Ads, Snapchat, Pinterest, LinkedIn, Reddit, Segment, Adobe Analytics, Amplitude, Mixpanel, Microsoft UET, X, Criteo, Floodlight, Taboola, Outbrain, Quora and the dataLayer."
+      "text": "Google Analytics 4, Google Tag Manager, Meta Pixel, TikTok, Google Ads, Snapchat, Pinterest, LinkedIn, Reddit, Segment, Adobe Analytics, Amplitude, Mixpanel, Microsoft UET, Microsoft Clarity, Amazon Ads tag, X, Criteo, Floodlight, Taboola, Outbrain, Quora and the dataLayer."
      }
     },
     {
@@ -177,7 +177,7 @@
         </div>
         <p class="kicker tagline">A magnifier for tracking events.</p>
       </div>
-      <h1 id="h1">See what your page <em>really</em> sends.</h1>
+      <h1 id="h1"><span class="hw" style="--w:0"><span>See</span></span> <span class="hw" style="--w:1"><span>what</span></span> <span class="hw" style="--w:2"><span>your</span></span> <span class="hw" style="--w:3"><span>page</span></span> <span class="hw" style="--w:4"><span><em>really</em></span></span> <span class="hw" style="--w:5"><span>sends.</span></span></h1>
       <p class="lede">Eventloupe is a Chrome DevTools extension. It shows every pixel, tag and dataLayer push a page fires, what was sent, and what was actually observed.</p>
       <!-- Waitlist is HIDDEN until it is wired. To go live: set data-endpoint on the form to the provider URL, remove its `hidden`
            attribute, delete the #wl-soon block below, and apply store/waitlist-privacy-addendum.md to the privacy page. -->
@@ -281,13 +281,21 @@
   </div>
 </section>
 
+<!-- ───────── STATEMENT ───────── -->
+<section class="statement" id="statement" aria-label="Fired is not the same as delivered">
+  <div class="st-stick"><div class="wrap">
+    <p class="st-big" id="st-big"><span class="sw">Fired</span> <span class="sw">is</span> <span class="sw">not</span> <span class="sw">the</span> <span class="sw">same</span> <span class="sw">as</span> <span class="sw acc">delivered.</span></p>
+    <p class="st-sub">A missing response isn't a success, and it isn't a failure. It is <b>unknown</b>.</p>
+  </div></div>
+</section>
+
 <!-- ───────── EVIDENCE / TRUTH GAP ───────── -->
 <section id="evidence" aria-labelledby="h-states">
   <div class="wrap">
     <div class="trace" aria-hidden="true"><i class="bad"></i></div>
     <p class="eyebrow">The truth gap</p>
     <h2 id="h-states">Evidence, not guesses.</h2>
-    <p class="sub"><strong class="lead">Fired is not the same as delivered.</strong> A missing response isn't a success, and it isn't a failure. Eventloupe keeps "I couldn't observe this" as its own answer instead of rounding it to yes or no.</p>
+    <p class="sub">Eventloupe keeps "I couldn't observe this" as its own answer instead of rounding it to yes or no.</p>
 
     <div class="states">
       <div class="state ok">
@@ -307,29 +315,48 @@
       </div>
     </div>
 
-    <div class="blk ba" id="ba">
-      <h3 class="blk-h">Same event, two answers</h3>
-      <div class="ba-grid">
-        <div class="ba-card old">
-          <p class="ba-lab">Standard debugger</p>
-          <div class="ba-res ok"><span aria-hidden="true">✓</span><div><b>purchase</b><small>Success</small></div></div>
-          <p class="ba-cap">The SDK call fired, so a pass/fail badge says it worked.</p>
-        </div>
-        <div class="ba-card new">
-          <p class="ba-lab">Eventloupe</p>
-          <ol class="ba-st" role="list" aria-label="Pipeline stages for the purchase event">
-            <li class="s ok" style="--i:0"><i aria-hidden="true">✓</i>Application</li>
-            <li class="s ok" style="--i:1"><i aria-hidden="true">✓</i>Tag Manager</li>
-            <li class="s ok" style="--i:2"><i aria-hidden="true">✓</i>SDK</li>
-            <li class="s ok" style="--i:3"><i aria-hidden="true">✓</i>Network</li>
-            <li class="s bad" style="--i:4"><i aria-hidden="true">✗</i>Response</li>
-            <li class="s unk" style="--i:5"><i aria-hidden="true">?</i>Correlation</li>
-          </ol>
-          <div class="ba-res bad"><span aria-hidden="true">✗</span><div><b>Failed at Response</b><small>HTTP 500 · EL1003</small></div></div>
-          <p class="ba-cap">The request left the browser. The server's response says it wasn't recorded.</p>
+    <div class="blk journey" id="journey">
+      <div class="j-track">
+        <div class="j-stick">
+          <h3 class="blk-h">Same event, two answers</h3>
+          <div class="j-grid">
+            <div class="ba-card old">
+              <p class="ba-lab">Standard debugger</p>
+              <div class="ba-res ok"><span aria-hidden="true">✓</span><div><b>purchase</b><small>Success</small></div></div>
+              <p class="ba-cap">The SDK call fired, so a pass/fail badge says it worked.</p>
+              <ul class="j-seen" aria-label="What a typical pass/fail badge looked at">
+                <li>SDK call fired <b>✓</b></li>
+                <li>Network request <b>not checked</b></li>
+                <li>Server response <b>not checked</b></li>
+                <li class="j-actual">Actual delivery <b>HTTP 500</b></li>
+              </ul>
+            </div>
+            <div class="ba-card new">
+              <p class="ba-lab">Eventloupe</p>
+              <div class="j-rail">
+                <div class="j-line" aria-hidden="true"><i class="j-fill"></i></div>
+                <span class="j-dot" aria-hidden="true">purchase</span>
+                <ol class="j-nodes" role="list" aria-label="Pipeline stages for the purchase event">
+            <li class="j-n ok" style="--i:0"><i aria-hidden="true">✓</i><span>Application</span><b class="sr-only"> observed</b></li>
+            <li class="j-n ok" style="--i:1"><i aria-hidden="true">✓</i><span>Tag Manager</span><b class="sr-only"> observed</b></li>
+            <li class="j-n ok" style="--i:2"><i aria-hidden="true">✓</i><span>SDK</span><b class="sr-only"> observed</b></li>
+            <li class="j-n ok" style="--i:3"><i aria-hidden="true">✓</i><span>Network</span><b class="sr-only"> observed</b></li>
+            <li class="j-n bad" style="--i:4"><i aria-hidden="true">✗</i><span>Response</span><em class="j-code" aria-hidden="true">EL1003</em><b class="sr-only"> failed</b></li>
+            <li class="j-n unk" style="--i:5"><i aria-hidden="true">?</i><span>Correlation</span><b class="sr-only"> unknown</b></li>
+            </ol>
+              </div>
+              <div class="j-swap">
+                <p class="j-cap" aria-hidden="true"></p>
+                <div class="j-reveal">
+                  <div class="ba-res bad j-verdict"><span aria-hidden="true">✗</span><div><b>Failed at Response</b><small>HTTP 500 · EL1003</small></div></div>
+                  <p class="ba-cap">The request left the browser and the server answered with an error. Delivery is confirmed failed, and the response is the stage where the evidence turns.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="legal">Illustrative example.<span class="j-hint"> Scroll to follow the event through each stage.</span></p>
         </div>
       </div>
-      <p class="legal">Illustrative example.</p>
     </div>
 
     <div class="blk blk-fold">
@@ -389,37 +416,37 @@
     <p class="sub">Codes are permanent identifiers: the wording can improve, the code never changes. They come from fixed rules, so the same input always gives the same result.</p>
     <div class="codes">
       <article class="code-card">
-        <div class="cc-top"><span class="cc-code">EL1001</span><span class="sev medium">Medium</span></div>
+        <div class="cc-top"><button type="button" class="cc-code" data-copy="EL1001" aria-label="Copy EL1001"><span class="cc-t">EL1001</span><span class="cc-ok" aria-hidden="true">Copied</span></button><span class="sev medium">Medium</span></div>
         <h3>Network request not observed</h3>
         <p class="cc-what">The JS API call was intercepted, but no matching network request was seen.</p>
         <p class="cc-fix"><b>Fix</b>Check whether a consent manager or ad blocker is suppressing the request.</p>
       </article>
       <article class="code-card">
-        <div class="cc-top"><span class="cc-code">EL1002</span><span class="sev critical">Critical</span></div>
+        <div class="cc-top"><button type="button" class="cc-code" data-copy="EL1002" aria-label="Copy EL1002"><span class="cc-t">EL1002</span><span class="cc-ok" aria-hidden="true">Copied</span></button><span class="sev critical">Critical</span></div>
         <h3>HTTP 4xx client error</h3>
         <p class="cc-what">The tracking server rejected the request, so the event was lost.</p>
         <p class="cc-fix"><b>Fix</b>Check the payload for malformed parameters or an invalid pixel ID.</p>
       </article>
       <article class="code-card">
-        <div class="cc-top"><span class="cc-code">EL1003</span><span class="sev critical">Critical</span></div>
+        <div class="cc-top"><button type="button" class="cc-code" data-copy="EL1003" aria-label="Copy EL1003"><span class="cc-t">EL1003</span><span class="cc-ok" aria-hidden="true">Copied</span></button><span class="sev critical">Critical</span></div>
         <h3>HTTP 5xx server error</h3>
         <p class="cc-what">The tracking server returned an error, so the platform failed to record the event.</p>
         <p class="cc-fix"><b>Fix</b>This is platform-side. Retry, or check the platform's status.</p>
       </article>
       <article class="code-card">
-        <div class="cc-top"><span class="cc-code">EL2003</span><span class="sev high">High</span></div>
+        <div class="cc-top"><button type="button" class="cc-code" data-copy="EL2003" aria-label="Copy EL2003"><span class="cc-t">EL2003</span><span class="cc-ok" aria-hidden="true">Copied</span></button><span class="sev high">High</span></div>
         <h3>Event ID mismatch</h3>
         <p class="cc-what">The event_id in the JS call doesn't match the one in the network request.</p>
         <p class="cc-fix"><b>Fix</b>Pass the same event_id to fbq() and to the CAPI server call.</p>
       </article>
       <article class="code-card">
-        <div class="cc-top"><span class="cc-code">EL4002</span><span class="sev medium">Medium</span></div>
+        <div class="cc-top"><button type="button" class="cc-code" data-copy="EL4002" aria-label="Copy EL4002"><span class="cc-t">EL4002</span><span class="cc-ok" aria-hidden="true">Copied</span></button><span class="sev medium">Medium</span></div>
         <h3>ad_storage denied on a conversion</h3>
         <p class="cc-what">The conversion may not be attributed to the right ad click.</p>
         <p class="cc-fix"><b>Fix</b>Make sure Consent Mode is configured correctly for your consent platform.</p>
       </article>
       <article class="code-card">
-        <div class="cc-top"><span class="cc-code">EL4012</span><span class="sev critical">Critical</span></div>
+        <div class="cc-top"><button type="button" class="cc-code" data-copy="EL4012" aria-label="Copy EL4012"><span class="cc-t">EL4012</span><span class="cc-ok" aria-hidden="true">Copied</span></button><span class="sev critical">Critical</span></div>
         <h3>Consent default set after config</h3>
         <p class="cc-what">gtag("consent","default") fired after gtag("config"), so tags may have fired with the wrong consent state.</p>
         <p class="cc-fix"><b>Fix</b>Move the consent default before any config call, ahead of your tag manager.</p>
@@ -427,6 +454,7 @@
     </div>
     <p class="legal">Eventloupe reports what it observed. A request it doesn't see is "not observed", and the fixes suggest likely causes without claiming one. <a href="docs.html#codes">See how codes are grouped in the docs →</a></p>
   </div>
+  <p class="sr-only" role="status" id="copy-say"></p>
 </section>
 
 <!-- ───────── PANEL ───────── -->
@@ -442,19 +470,32 @@
       <figcaption>Five tools, one timeline: every platform's events land in a single ordered stream. <button type="button" class="pmini" data-pause aria-pressed="false">Pause motion</button></figcaption>
     </figure>
 
-    <div class="tabs" role="tablist" aria-label="Panel views">
-      <button role="tab" id="t0" aria-selected="true"  aria-controls="p0" type="button">Across platforms</button>
-      <button role="tab" id="t1" aria-selected="false" aria-controls="p1" type="button" tabindex="-1">Validation</button>
+    <div class="blk tour" id="tour">
+      <div class="t-track">
+        <div class="t-stick">
+          <h3 class="blk-h">Inside the panel</h3>
+          <div class="t-view"><div class="t-frame"><img src="img/across-platforms.webp" width="1280" height="800" alt="Eventloupe panel listing an add-to-cart event captured across several platforms on a live store: a health score on the left, the event feed in the middle and the selected event's detail on the right" decoding="async"></div></div>
+          <div class="t-crops">
+            <figure class="t-crop" style="--x:0;--y:135;--w:360;--h:330" role="img" aria-label="Crop of the panel: the health score with event coverage, parameter quality and identity rate"><div></div></figure>
+            <figure class="t-crop" style="--x:210;--y:135;--w:520;--h:250" role="img" aria-label="Crop of the panel: the event feed, listing add-to-cart events from several platforms in time order"><div></div></figure>
+            <figure class="t-crop" style="--x:940;--y:135;--w:340;--h:430" role="img" aria-label="Crop of the panel: the detail pane for the selected event, with its pipeline, normalized fields and validation tabs"><div></div></figure>
+          </div>
+          <ol class="t-steps" role="list">
+            <li class="on"><b>One panel</b><span>An add-to-cart on a live store, caught on every platform that fired it.</span></li>
+            <li><b>Health score</b><span>A session grade, with event coverage, parameter quality and identity rate behind it.</span></li>
+            <li><b>The feed</b><span>Every event in time order, from every platform that fired it.</span></li>
+            <li><b>The detail pane</b><span>Pipeline, normalized fields, payload, ecom, validation and request for the selected event.</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="More panel views">
+      <button role="tab" id="t1" aria-selected="true"  aria-controls="p1" type="button">Validation</button>
       <button role="tab" id="t2" aria-selected="false" aria-controls="p2" type="button" tabindex="-1">Issues &amp; health</button>
       <button role="tab" id="t3" aria-selected="false" aria-controls="p3" type="button" tabindex="-1">Consent mode</button>
     </div>
-
-    <figure class="shot" id="p0" role="tabpanel" tabindex="0" aria-labelledby="t0">
-      <div class="frame"><div class="top" aria-hidden="true"><b></b><b></b><b></b></div>
-        <img src="img/across-platforms.webp" width="1280" height="800" alt="Eventloupe panel listing an add-to-cart event captured across several platforms on a live store" decoding="async"></div>
-      <figcaption>An add-to-cart on a live store, caught on every platform that fired it, in one timeline.</figcaption>
-    </figure>
-    <figure class="shot" id="p1" role="tabpanel" tabindex="0" aria-labelledby="t1" hidden>
+    <figure class="shot" id="p1" role="tabpanel" tabindex="0" aria-labelledby="t1">
       <div class="frame"><div class="top" aria-hidden="true"><b></b><b></b><b></b></div>
         <img src="img/validation.webp" width="1280" height="800" alt="Eventloupe validation tab with every check on an event passing" loading="lazy" decoding="async"></div>
       <figcaption>Each event is checked against the platform's own documentation. Healthy events show clearly as healthy.</figcaption>
@@ -541,7 +582,7 @@
     <div class="faq-list">
       <details><summary>What is Eventloupe?</summary><p>Eventloupe is a Chrome DevTools extension that shows every pixel, tag and dataLayer push a page fires, what was sent, and what was actually observed. It covers 23 platforms in one panel.</p></details>
       <details><summary>How is Eventloupe different from a pass/fail tag debugger?</summary><p>A typical debugger reports success or failure. Eventloupe records three states: observed, failed or unknown. A missing response is shown as unknown instead of being guessed, and each event is traced through six stages from the page to the response.</p></details>
-      <details><summary>Which platforms does Eventloupe support?</summary><p>Google Analytics 4, Google Tag Manager, Meta Pixel, TikTok, Google Ads, Snapchat, Pinterest, LinkedIn, Reddit, Segment, Adobe Analytics, Amplitude, Mixpanel, Microsoft UET, X, Criteo, Floodlight, Taboola, Outbrain, Quora and the dataLayer.</p></details>
+      <details><summary>Which platforms does Eventloupe support?</summary><p>Google Analytics 4, Google Tag Manager, Meta Pixel, TikTok, Google Ads, Snapchat, Pinterest, LinkedIn, Reddit, Segment, Adobe Analytics, Amplitude, Mixpanel, Microsoft UET, Microsoft Clarity, Amazon Ads tag, X, Criteo, Floodlight, Taboola, Outbrain, Quora and the dataLayer.</p></details>
       <details><summary>Does Eventloupe block or change requests?</summary><p>No. It only observes requests. It never blocks or modifies them.</p></details>
       <details><summary>Does the Eventloupe extension send my data anywhere?</summary><p>No. Captured events stay in your browser. The extension has no accounts, no servers and no analytics.</p></details>
       <details><summary>When is Eventloupe available?</summary><p>Eventloupe is launching soon on the Chrome Web Store.</p></details>
