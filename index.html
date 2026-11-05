@@ -145,7 +145,7 @@
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="./" aria-label="Eventloupe home"><span class="mark" aria-hidden="true"><svg width="44" height="44"><use href="#lm"/></svg></span><span class="word">Eventloupe</span><span class="navtag">A magnifier for tracking events</span></a>
+    <a class="brand" href="./"><span class="mark" aria-hidden="true"><svg width="44" height="44"><use href="#lm"/></svg></span><span class="word">Eventloupe</span><span class="navtag">A magnifier for tracking events</span></a>
     <nav aria-label="Primary">
       <ul>
         <li class="keep"><a href="#how">How it works</a></li>
@@ -497,21 +497,27 @@
       <button role="tab" id="t2" aria-selected="false" aria-controls="p2" type="button" tabindex="-1">Issues &amp; health</button>
       <button role="tab" id="t3" aria-selected="false" aria-controls="p3" type="button" tabindex="-1">Consent mode</button>
     </div>
-    <figure class="shot" id="p1" role="tabpanel" tabindex="0" aria-labelledby="t1">
+    <div id="p1" role="tabpanel" tabindex="0" aria-labelledby="t1">
+    <figure class="shot">
       <div class="frame"><div class="top" aria-hidden="true"><b></b><b></b><b></b></div>
         <img src="img/validation.webp" width="1280" height="800" alt="Eventloupe validation tab with every check on an event passing" loading="lazy" decoding="async"></div>
       <figcaption>Each event is checked against the platform's own documentation. Healthy events show clearly as healthy.</figcaption>
     </figure>
-    <figure class="shot" id="p2" role="tabpanel" tabindex="0" aria-labelledby="t2" hidden>
+    </div>
+    <div id="p2" role="tabpanel" tabindex="0" aria-labelledby="t2" hidden>
+    <figure class="shot">
       <div class="frame"><div class="top" aria-hidden="true"><b></b><b></b><b></b></div>
         <img src="img/issues-health.webp" width="1280" height="800" alt="Eventloupe issues panel and health score for a captured session" loading="lazy" decoding="async"></div>
       <figcaption>Issues grouped by severity, with a health score that tells you what needs attention first.</figcaption>
     </figure>
-    <figure class="shot" id="p3" role="tabpanel" tabindex="0" aria-labelledby="t3" hidden>
+    </div>
+    <div id="p3" role="tabpanel" tabindex="0" aria-labelledby="t3" hidden>
+    <figure class="shot">
       <div class="frame"><div class="top" aria-hidden="true"><b></b><b></b><b></b></div>
         <img src="img/consent.webp" width="1280" height="800" alt="Eventloupe consent mode timeline showing consent signals alongside tracking events" loading="lazy" decoding="async"></div>
       <figcaption>Consent signals on the same timeline as the events they affect.</figcaption>
     </figure>
+    </div>
       <div class="blk life-blk">
       <h3 class="blk-h">The life of one event</h3>
       <p class="sub" style="margin-top:8px">Six stages, each marked observed, failed or unknown. Select a stage to see what Eventloupe looks at there.</p>
@@ -620,7 +626,7 @@
 
 <footer>
   <div class="wrap">
-    <a class="brand big" href="./" aria-label="Eventloupe home"><span class="mark" aria-hidden="true"><svg width="56" height="56"><use href="#lm"/></svg></span><span class="word">Eventloupe</span></a>
+    <a class="brand big" href="./"><span class="mark" aria-hidden="true"><svg width="56" height="56"><use href="#lm"/></svg></span><span class="word">Eventloupe</span></a>
     <nav aria-label="Footer">
       <a href="docs.html">Docs</a>
       <a href="privacy.html">Privacy</a>

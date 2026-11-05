@@ -661,7 +661,8 @@ footer .ftag { flex-basis: 100%; margin: -6px 0 0; font: 500 14px/1.4 var(--mono
 .statement { background: var(--ink); padding-block: clamp(96px, 20vh, 200px) clamp(40px, 8vh, 96px); }
 .st-big { font: 800 clamp(2.5rem, 9.4vw, 8.6rem)/.98 var(--head); letter-spacing: -.035em; text-wrap: balance; color: var(--paper); max-width: 16ch; }
 .st-big .sw.acc { color: var(--red-hi); }
-.s-js .st-big .sw { opacity: .16; transition: opacity 260ms var(--ease-out); }
+.s-js .st-big .sw.acc:not(.lit) { opacity: .72; }
+.s-js .st-big .sw { opacity: .42; transition: opacity 260ms var(--ease-out); }
 .s-js .st-big .sw.lit { opacity: 1; }
 
 /* journey: one event, followed stage by stage as you scroll */
@@ -770,7 +771,7 @@ button.cc-code:active { transform: scale(.97); }
   #how { padding-bottom: 40px; }
   .card { position: sticky; top: calc(104px + var(--k, 0) * 26px); display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 4px 36px; align-items: start; padding: 44px 52px 48px; margin-bottom: 13vh; box-shadow: 0 -18px 40px -26px rgba(22,26,34,.3), 0 1px 0 rgba(255,255,255,.6) inset; }
   .card:nth-child(1) { --k: 0; } .card:nth-child(2) { --k: 1; } .card:nth-child(3) { --k: 2; margin-bottom: 0; }
-  .card .n { grid-row: 1 / span 2; font-size: 4.6rem; letter-spacing: -.02em; line-height: .9; font-family: var(--head); font-weight: 800; color: #d9d0bf; }
+  .card .n { grid-row: 1 / span 2; font-size: 4.6rem; letter-spacing: -.02em; line-height: .9; font-family: var(--head); font-weight: 800; color: #968b73; }
   .card h3 { font-size: clamp(1.9rem, 3vw, 2.6rem); margin: 0 0 14px; }
   .card p { font-size: 1.08rem; max-width: 40rem; }
 }
