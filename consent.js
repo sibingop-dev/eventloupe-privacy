@@ -69,10 +69,14 @@
       var a = e.target && e.target.getAttribute && e.target.getAttribute('data-a')
       if (!a) return
       if (a === 'y') accept(); else decline()
-      bar.classList.remove('in'); setTimeout(function () { bar.hidden = true }, 200)
+      bar.classList.remove('in'); setTimeout(function () { bar.hidden = true; pad(false) }, 200)
     })
     d.body.appendChild(bar)
     return bar
+  }
+  // Reserve the banner's height so the end of the page can scroll clear of it.
+  function pad(on) {
+    try { d.body.style.paddingBottom = on && bar ? (bar.offsetHeight + 16) + 'px' : '' } catch (e) {}
   }
   function show(reopen) {
     var b = build()
@@ -81,6 +85,7 @@
       ? 'Your analytics choice is <strong>' + (cur === 'granted' ? 'accepted' : 'declined') + '</strong>. You can change it here. <a href="privacy.html#website">How this site uses analytics</a>.'
       : '<span class="el-lead">This site can use Google Tag Manager for page analytics. </span><strong>Nothing from Google loads until you accept.</strong> <a href="privacy.html#website">Details</a>'
     b.hidden = false
+    pad(true)
     setTimeout(function () { b.classList.add('in') }, 30)
   }
 
