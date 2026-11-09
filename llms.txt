@@ -2,7 +2,7 @@
 
 > Eventloupe is a Chrome DevTools extension, "a magnifier for tracking events". It shows every pixel, tag and dataLayer push a page fires, what was sent, and what was actually observed. Each event is marked observed, failed or unknown, and traced through six stages from the page to the server's response.
 
-Status: launching soon on the Chrome Web Store.
+Status: available now on the Chrome Web Store: https://chromewebstore.google.com/detail/pjpdmenmnoaohfbcbplmpmnaegpgmnmp
 
 ## Key facts
 - Covers 23 sources in one DevTools panel: dataLayer, Google Analytics 4, Google Tag Manager, Meta Pixel, TikTok, Google Ads, Snapchat, Pinterest, LinkedIn, Reddit, Segment, Adobe Analytics, Amplitude, Mixpanel, Microsoft UET, Microsoft Clarity, the Amazon Ads tag, X, Criteo, Floodlight/CM360, Taboola, Outbrain and Quora.

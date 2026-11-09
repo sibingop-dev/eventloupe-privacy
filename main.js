@@ -367,45 +367,11 @@
   } catch (err) { document.documentElement.classList.remove('motion'); var p = document.querySelector('.pipe'); if (p) p.classList.add('in'); var r = document.getElementById('resolve'); if (r) r.classList.add('done') }
 })()
 
-/* ═════════ conversion layer: waitlist, life-cycle, before/after, diagram pause ═════════ */
+/* ═════════ conversion layer: life-cycle, before/after, diagram pause ═════════ */
 ;(function () {
   'use strict'
   try {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-  /* ── waitlist (UI only until data-endpoint is set; never claims a signup it didn't make) ── */
-  var form = document.getElementById('waitlist')
-  if (form) {
-    var input = document.getElementById('wl-email'), note = document.getElementById('wl-note')
-    var btn = form.querySelector('button[type=submit]')
-    var paint = function (msg, err) {
-      note.className = 'wl-note' + (err ? ' err' : '')
-      note.setAttribute('role', err ? 'alert' : 'status')
-      note.textContent = ''
-      var dot = document.createElement('i'); dot.setAttribute('aria-hidden', 'true')
-      note.appendChild(dot); note.appendChild(document.createTextNode(msg))
-    }
-    var say = function (msg, err) { if (err) { note.textContent = ''; setTimeout(function () { paint(msg, true) }, 60) } else paint(msg, false) }
-    form.addEventListener('submit', function (e) {
-      e.preventDefault()
-      if (form.elements.website && form.elements.website.value) { say("Couldn't submit that. Please try again.", true); return }   // honeypot
-      var email = input.value.trim()
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        input.setAttribute('aria-invalid', 'true'); say('Enter a valid email address.', true); input.focus(); return
-      }
-      input.removeAttribute('aria-invalid')
-      var ep = form.getAttribute('data-endpoint')
-      if (!ep) { say("The waitlist isn't open yet. This form isn't connected to a list, so nothing was saved or sent.", true); return }
-      btn.disabled = true
-      var ctl = ('AbortController' in window) ? new AbortController() : null
-      var timer = ctl ? setTimeout(function () { ctl.abort() }, 10000) : 0
-      fetch(ep, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form), signal: ctl ? ctl.signal : undefined })
-        .then(function (r) { if (!r.ok) throw new Error('bad status'); say("You're on the list. We'll email once, when it's live."); form.reset() })
-        .catch(function () { say("Couldn't reach the list. Please try again in a moment.", true) })
-        .then(function () { clearTimeout(timer); btn.disabled = false })
-    })
-    input.addEventListener('input', function () { input.removeAttribute('aria-invalid') })
-  }
 
   /* ── interactive event life-cycle ── */
   var STAGES = [

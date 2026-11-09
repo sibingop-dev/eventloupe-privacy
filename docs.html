@@ -74,7 +74,7 @@
 
       <section id="start" aria-labelledby="d-start">
         <h2 id="d-start">Getting started</h2>
-        <p>Eventloupe is a Chrome DevTools extension. It's launching on the Chrome Web Store soon, so there's no public download yet.</p>
+        <p>Eventloupe is a Chrome DevTools extension. <a href="https://chromewebstore.google.com/detail/pjpdmenmnoaohfbcbplmpmnaegpgmnmp?source=website" rel="noopener">Install it from the Chrome Web Store</a>, then open the panel:</p>
         <h3>Open the panel</h3>
         <p>Chrome has no way for an extension to open DevTools for you, so there are three steps:</p>
         <ol class="steps">
@@ -194,11 +194,11 @@
               <tr><th scope="row"><code>&lt;all_urls&gt;</code></th><td>To inject the tracking interceptor into any website you open for inspection.</td></tr>
               <tr><th scope="row"><code>webRequest</code></th><td>To observe (not block or modify) network requests from tracking pixels that fire before DevTools is opened.</td></tr>
               <tr><th scope="row"><code>scripting</code></th><td>To inject a small hook into the inspected page to intercept dataLayer pushes and SDK calls.</td></tr>
-              <tr><th scope="row"><code>tabs</code></th><td>To read the current tab's URL so events are grouped by page.</td></tr>
               <tr><th scope="row"><code>storage</code></th><td>To save your alert-rule preferences locally in your browser.</td></tr>
             </tbody>
           </table>
         </div>
+        <p>Eventloupe does not request the <code>tabs</code> permission. It reads a page's address only on pages it runs on, to group events by page.</p>
         <p><a href="privacy.html">Read the full privacy policy →</a></p>
       </section>
 
